@@ -1,4 +1,5 @@
 .profile__container-middle {
   display: flex;
   flex-direction: column;
+  padding-left: 10px;
 }
