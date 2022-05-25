@@ -24,6 +24,9 @@ function handleProfileFormSubmit(evt) {
     // Selecciona los elementos donde se introducirán los valores de los campos
 
     // Inserta nuevos valores utilizando el textContent
+    nameInput.textContent = name
+    jobInput.textContent = job
+
     // propiedad del método querySelector()
 }
 
