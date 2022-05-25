@@ -18,3 +18,11 @@
 @import url(../blocks/profile/__subcontainer-top/profile__subcontainer-top.css);
 @import url(../blocks/profile/__subcontainer-bottom/profile__subcontainer-bottom.css);
 @import url(../blocks/profile/__title/profile__title.css);
+
+@import url(../blocks/cards/cards.css);
+@import url(../blocks/card/card.css);
+@import url(../blocks/card/__container/card__container.css);
+@import url(../blocks/card/__img/card__img.css);
+@import url(../blocks/card/__like-button/card__like-button.css);
+@import url(../blocks/card/__text-container/card__text-container.css);
+@import url(../blocks/card/__title/card__title.css);
