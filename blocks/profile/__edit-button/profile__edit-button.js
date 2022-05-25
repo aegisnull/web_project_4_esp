@@ -18,6 +18,8 @@ function handleProfileFormSubmit(evt) {
     let jobInput = formElement.querySelector(.modal__profile-title) // Use querySelector()
 
     // Obtén los valores de cada campo desde la propiedad de valor correspondiente
+    let name = document.querySelector(.profile__name)
+    let job = document.querySelector(.profile__title)
 
     // Selecciona los elementos donde se introducirán los valores de los campos
 
