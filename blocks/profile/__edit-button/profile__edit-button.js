@@ -1,5 +1,5 @@
 // Busquemos el formulario en el DOM
-let formElement = document.querySelector(.profile__edit-button) // Utiliza el método querySelector()
+let formElement = document.querySelector(.modal__form) // Utiliza el método querySelector()
 
 // Lo siguiente es el manipulador (handler) de entrega de formularios, aunque
 // no se enviará en ningún sitio todavía
@@ -14,8 +14,8 @@ function handleProfileFormSubmit(evt) {
     // Lo explicaremos todo con más detalle después.
 
     // Busquemos los campos del formulario en el DOM
-    let nameInput = // Use querySelector()
-    let jobInput = // Use querySelector()
+    let nameInput = formElement.querySelector(.modal__profile-name) // Use querySelector()
+    let jobInput = formElement.querySelector(.modal__profile-title) // Use querySelector()
 
     // Obtén los valores de cada campo desde la propiedad de valor correspondiente
 
