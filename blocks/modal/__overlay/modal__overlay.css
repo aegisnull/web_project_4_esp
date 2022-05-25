@@ -10,3 +10,8 @@
   visibility: hidden;
   z-index: 40;
 }
+
+.modal-overlay.state-show {
+  opacity: 0.7;
+  visibility: visible;
+}
