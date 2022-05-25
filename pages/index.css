@@ -4,3 +4,17 @@
 @import url(../blocks/header/header.css);
 @import url(../blocks/header/__line/header__line.css);
 @import url(../blocks/header/__logo/header__logo.css);
+
+@import url(../blocks/profile/profile.css);
+@import url(../blocks/profile/__container-left/profile__container-left.css);
+@import url(../blocks/profile/__container-right/profile__container-right.css);
+@import url(../blocks/profile/__container-middle/profile__container-middle.css);
+@import url(../blocks/profile/__edit-button/profile__edit-button.css);
+@import url(../blocks/profile/__edit-button/_icon/profile__edit-button_icon.css);
+@import url(../blocks/profile/__img/profile__img.css);
+@import url(../blocks/profile/__name/profile__name.css);
+@import url(../blocks/profile/__post-button/profile__post-button.css);
+@import url(../blocks/profile/__post-button/_icon/profile__post-button_icon.css);
+@import url(../blocks/profile/__subcontainer-left/profile__subcontainer-left.css);
+@import url(../blocks/profile/__subcontainer-right/profile__subcontainer-right.css);
+@import url(../blocks/profile/__title/profile__title.css);
