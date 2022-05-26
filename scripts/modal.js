@@ -3,8 +3,8 @@ let editButton = document.querySelector(".profile__edit-button");
 let modal = document.querySelector(".modal");
 let formName = document.querySelector(".modal__profile-name");
 let formTitle = document.querySelector(".modal__profile-title");
-let profileName = document.querySelector(".profile__name");
-let profileTitle = document.querySelector(".profile__title");
+let profileName = "Luis Tellez";
+let profileTitle = "Web developer";
 let closeButton = document.querySelector(".modal__close");
 let form = document.querySelector(".modal__form");
 
@@ -15,8 +15,8 @@ editButton.addEventListener("click", modalOpen);
 // Function to open modal and in the process set the values of the form fields same as the profile fields
 function modalOpen() {
   modal.classList.add("modal_active");
-  formName.value = profileName.textContent;
-  formTitle.value = profileTitle.textContent;
+  formName.value = profileName;
+  formTitle.value = profileTitle;
 }
 
 //Controls for edit modal closing
