@@ -17,4 +17,5 @@
 
 .modal__form-submit:hover {
   cursor: pointer;
+  opacity: 0.5;
 }
