@@ -37,13 +37,12 @@ function updateNameAndTitle() {
 }
 
 // Controls for active like button
-let likeButton = document.querySelector(".profile__like-button");
+let likeButton = document.querySelector(".card__like-button");
 
 // Event listener for like button click
 likeButton.addEventListener("click", likeButtonClick);
 
 // Add class on button click
 function likeButtonClick() {
-  likeButton.classList.toggle("profile__like-button_active");
-  console.log("Like button clicked");
+  likeButton.classList.toggle("card__like-button_active");
 }
