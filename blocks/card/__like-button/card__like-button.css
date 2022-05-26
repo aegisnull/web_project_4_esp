@@ -1,6 +1,9 @@
 .card__like-button {
   width: 21px;
   height: 19px;
+  background: transparent;
+  border: none;
+  background-image: url(../../../img/like.svg);
 }
 
 .card__like-button:hover {
