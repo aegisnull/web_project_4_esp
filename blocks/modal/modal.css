@@ -1,5 +1,5 @@
 .modal {
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   right: 0;
@@ -9,6 +9,7 @@
   align-items: center;
   justify-content: center;
   visibility: hidden;
+  background-color: rgba(0, 0, 0, 0.5);
 }
 
 .modal_active {
