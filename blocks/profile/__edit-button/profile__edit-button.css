@@ -7,3 +7,7 @@
   align-items: center;
   background-color: transparent;
 }
+
+.profile__edit-button:hover {
+  cursor: pointer;
+}
