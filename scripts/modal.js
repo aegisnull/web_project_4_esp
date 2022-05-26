@@ -6,6 +6,7 @@ let formTitle = document.querySelector(".modal__profile-title");
 let profileName = document.querySelector(".profile__name");
 let profileTitle = document.querySelector(".profile__title");
 let closeButton = document.querySelector(".modal__close");
+let form = document.querySelector(".modal__form");
 
 //Controls for edit modal opening
 // Event listener for edit button click
@@ -24,4 +25,13 @@ closeButton.addEventListener("click", modalClose);
 
 function modalClose() {
   modal.classList.remove("modal_active");
+}
+
+// Event listener for form submit
+form.addEventListener("submit", updateNameAndTitle);
+
+//Function to update the profile name and title
+function updateNameAndTitle() {
+  profileName.textContent = formName.value;
+  profileTitle.textContent = formTitle.value;
 }
