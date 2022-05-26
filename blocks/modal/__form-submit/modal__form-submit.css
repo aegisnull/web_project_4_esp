@@ -1,0 +1,16 @@
+.modal__form-submit {
+  background-color: #000;
+  border-radius: 2px;
+  border-style: none;
+  color: #fff;
+  font-family: "Inter";
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 22px;
+  margin-bottom: 36px;
+  margin-top: 18px;
+  min-width: 358px;
+  padding-bottom: 14px;
+  padding-top: 14px;
+}
