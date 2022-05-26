@@ -6,3 +6,8 @@
   height: 50px;
   border: solid 2px #fff;
 }
+
+.profile__post-button:hover {
+  cursor: pointer;
+  opacity: 0.5;
+}
