@@ -45,4 +45,5 @@ likeButton.addEventListener("click", likeButtonClick);
 // Add class on button click
 function likeButtonClick() {
   likeButton.classList.toggle("profile__like-button_active");
+  console.log("Like button clicked");
 }
