@@ -1,9 +1,7 @@
 .modal__container {
-  display: block;
-  vertical-align: middle;
-  text-align: center;
-}
-
-.modal__container_active {
-  visibility: visible;
+  background-color: white;
+  width: 430px;
+  height: 330px;
+  border-radius: 10px;
+  margin: auto;
 }
