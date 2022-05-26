@@ -11,3 +11,7 @@
   border-style: none;
   padding: 0;
 }
+
+.modal__close:hover {
+  cursor: pointer;
+}
