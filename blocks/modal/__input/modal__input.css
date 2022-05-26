@@ -1,9 +1,18 @@
-form__input {
-  border: none;
-  height: 27.26px;
+.modal__input {
+  border-bottom-color: rgba(0, 0, 0, 0.2);
+  border-left: none;
+  border-right: none;
+  border-top: none;
+  color: #000;
+  font-family: "Inter";
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 17px;
+  margin-bottom: 30px;
+  outline-color: rgba(85, 0, 85, 0.5);
+  padding-bottom: 5px;
   width: 100%;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
 }
-.form__input:focus {
+.modal__input:focus {
   outline: none;
 }
