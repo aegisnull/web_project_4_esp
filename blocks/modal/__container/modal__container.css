@@ -1,7 +1,9 @@
 .modal__container {
-  background-color: white;
-  width: 430px;
-  height: 330px;
+  background-color: #fff;
   border-radius: 10px;
-  margin: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  width: 430px;
 }
