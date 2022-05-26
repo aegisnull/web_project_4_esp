@@ -35,3 +35,14 @@ function updateNameAndTitle() {
   profileName.textContent = formName.value;
   profileTitle.textContent = formTitle.value;
 }
+
+// Controls for active like button
+let likeButton = document.querySelector(".profile__like-button");
+
+// Event listener for like button click
+likeButton.addEventListener("click", likeButtonClick);
+
+// Add class on button click
+function likeButtonClick() {
+  likeButton.classList.toggle("profile__like-button_active");
+}
