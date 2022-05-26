@@ -1,15 +1,14 @@
 .modal__close {
+  height: 40px;
+  width: 60px;
+  position: absolute;
+  right: -50px;
+  top: -40px;
   background-color: transparent;
   background-image: url(../../../img/close.svg);
   background-position: 50%;
   background-repeat: no-repeat;
   background-size: 100%;
   border-style: none;
-  height: 40px;
   padding: 0;
-  position: absolute;
-  right: -50px;
-  top: -40px;
-  transition: opacity 0.5s linear;
-  width: 60px;
 }
