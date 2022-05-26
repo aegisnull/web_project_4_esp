@@ -12,7 +12,7 @@
   z-index: 40;
 }
 
-.modal-overlay.state-show {
+.modal__overlay_active {
   opacity: 0.7;
   visibility: visible;
 }
