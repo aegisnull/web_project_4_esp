@@ -2,3 +2,10 @@
   flex-grow: 1;
   padding-right: 30px;
 }
+
+@media screen and (max-width: 640px) {
+  .profile__container-left {
+    padding-right: 0;
+    padding-bottom: 26.25px;
+  }
+}
