@@ -2,15 +2,38 @@
 
 ### Descripción general
 
-* Figma
-* Imágenes
+- Introducción
+- Tecnologías utilizadas
+- Técnicas utilizadas
+- Figma
+- DEMO
+
+**Introducción**
+
+El proyecto se trata de elaborar un sitio web de una sola página en donde se replique el diseño de una página web elaborado en Figma y redactar el código de manera que sea responsivo y funcione en todos los dispositivos, el sitio web está compuesto enteramente de código HTML, CSS Vanilla y Javascript directo.
+
+**Tecnologías utilizadas**
+
+    - HTML
+    - CSS
+    - Javascript
+
+**Técnicas utilizadas**
+
+    - Responsive Design
+    - Flexbox
+    - Media Queries
+    - Hover
+    - Event listeners
+    - Functions
+    - Variables
 
 **Figma**
 
-* [Enlace al proyecto en Figma](https://www.figma.com/file/LDMgqWesKpQkIwhOfEBuTS/WEB%2C-Sprint-5%3A-Around-The-U.S.-%7C-desktop-%2B-mobile?node-id=0%3A1)
+- [Enlace al proyecto en Figma](https://www.figma.com/file/zXzLVGc4KNVm3FMTsAnQnH/WEB%2C-Sprint-4%3A-Alrededor-de-los-EEUU-%7C-desktop-%2B-mobile?node-id=20405%3A262)
 
-**Imágenes**
+**DEMO**
 
-A la hora de trabajar, debes optar por exportar las imágenes directamente desde Figma; te recomendamos hacerlo para practicar más. No olvides optimizarlas [aquí](https://tinypng.com/), para que tu proyecto cargue más rápido. 
+El sitio web puede visualizarse en el siguiente enlace:
 
-¡Esperamos que te diviertas con JavaScript!
+- [Enlace al proyecto en Github Pages](https://aegisnull.github.io/web_project_4_esp/)
