@@ -3,3 +3,9 @@
   flex-direction: column;
   flex-grow: 10000;
 }
+
+@media screen and (max-width: 640px) {
+  .profile__container-middle {
+    padding-bottom: 36px;
+  }
+}
