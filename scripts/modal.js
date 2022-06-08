@@ -7,7 +7,7 @@ let profileName = document.querySelector(".profile__name");
 let profileTitle = document.querySelector(".profile__title");
 let profileCloseButton = document.querySelector(".modal__close");
 let form = document.querySelector(".modal__form");
-let createPostButton = document.querySelector(".profile__post-button_icon");
+let createPostButton = document.querySelector(".profile__post-button");
 let modalPost = document.querySelector(".modal-post");
 let postCloseButton = document.querySelector(".modal-post__close");
 
