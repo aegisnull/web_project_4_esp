@@ -8,6 +8,7 @@ let profileTitle = document.querySelector(".profile__title");
 let profileCloseButton = document.querySelector(".modal__close");
 let form = document.querySelector(".modal__form");
 let createPostButton = document.querySelector(".profile__post-button_icon");
+let modalPost = document.querySelector(".modal-post");
 
 //Controls for edit modal opening
 // Event listener for edit button click
@@ -77,4 +78,9 @@ const initialCards = [
 ];
 
 // Event listener for createPostButton button click
-createPostButton.addEventListener("click", modalOpen);
+createPostButton.addEventListener("click", modalPostOpen);
+
+// Function to open modal and in the process set the values of the form fields same as the profile fields
+function modalPostOpen() {
+  modalPost.classList.add("modal-post_active");
+}
