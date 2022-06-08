@@ -7,6 +7,7 @@ let profileName = document.querySelector(".profile__name");
 let profileTitle = document.querySelector(".profile__title");
 let closeButton = document.querySelector(".modal__close");
 let form = document.querySelector(".modal__form");
+let createPostButton = document.querySelector(".profile__post-button_icon");
 
 //Controls for edit modal opening
 // Event listener for edit button click
@@ -74,3 +75,6 @@ const initialCards = [
     link: "https://code.s3.yandex.net/web-code/lago.jpg",
   },
 ];
+
+// Event listener for createPostButton button click
+createPostButton.addEventListener("click", modalOpen);
