@@ -88,8 +88,8 @@ function modalPostOpen() {
 
 //Controls for edit modal closing
 // Event listener for close button click
-postCloseButton.addEventListener("click", modalClose);
+postCloseButton.addEventListener("click", modalPostClose);
 
-function modalClose() {
+function modalPostClose() {
   modalPost.classList.remove("modal-post_active");
 }
