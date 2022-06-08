@@ -5,7 +5,7 @@ let formName = document.querySelector(".modal__profile-name");
 let formTitle = document.querySelector(".modal__profile-title");
 let profileName = document.querySelector(".profile__name");
 let profileTitle = document.querySelector(".profile__title");
-let closeButton = document.querySelector(".modal__close");
+let profileCloseButton = document.querySelector(".modal__close");
 let form = document.querySelector(".modal__form");
 let createPostButton = document.querySelector(".profile__post-button_icon");
 
@@ -22,7 +22,7 @@ function modalOpen() {
 
 //Controls for edit modal closing
 // Event listener for close button click
-closeButton.addEventListener("click", modalClose);
+profileCloseButton.addEventListener("click", modalClose);
 
 function modalClose() {
   modal.classList.remove("modal_active");
