@@ -43,3 +43,4 @@
 @import url(../blocks/modal/__form-submit/modal__form-submit.css);
 
 @import url(../blocks/modal-post/modal-post.css);
+@import url(../blocks/modal-post/__close/modal-post__close.css);

@@ -9,6 +9,7 @@ let profileCloseButton = document.querySelector(".modal__close");
 let form = document.querySelector(".modal__form");
 let createPostButton = document.querySelector(".profile__post-button_icon");
 let modalPost = document.querySelector(".modal-post");
+let postCloseButton = document.querySelector(".modal-post__close");
 
 //Controls for edit modal opening
 // Event listener for edit button click
@@ -83,4 +84,12 @@ createPostButton.addEventListener("click", modalPostOpen);
 // Function to open modal and in the process set the values of the form fields same as the profile fields
 function modalPostOpen() {
   modalPost.classList.add("modal-post_active");
+}
+
+//Controls for edit modal closing
+// Event listener for close button click
+postCloseButton.addEventListener("click", modalClose);
+
+function modalClose() {
+  modalPost.classList.remove("modal-post_active");
 }
