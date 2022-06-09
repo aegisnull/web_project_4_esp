@@ -10,6 +10,8 @@ let form = document.querySelector(".modal__form");
 let createPostButton = document.querySelector(".profile__post-button");
 let modalPost = document.querySelector(".modal-post");
 let postCloseButton = document.querySelector(".modal-post__close");
+let cardTitle = document.querySelector(".modal__profile-cardtitle");
+let cardURL = document.querySelector(".modal__profile-cardurl");
 
 //Controls for edit modal opening
 // Event listener for edit button click
