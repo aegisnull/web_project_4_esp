@@ -103,4 +103,6 @@ let createCard = (data) => {
     cardLike.classList.toggle("card__like-button_active");
   });
 
- 
+  cardRemove.addEventListener("click", () => {
+    cardImage.parentNode.remove();
+  });
