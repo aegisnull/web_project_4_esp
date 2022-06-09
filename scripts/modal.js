@@ -12,6 +12,9 @@ let modalPost = document.querySelector(".modal-post");
 let postCloseButton = document.querySelector(".modal-post__close");
 let cardTitle = document.querySelector(".modal__profile-cardtitle");
 let cardURL = document.querySelector(".modal__profile-cardurl");
+let cardTemplate = document
+  .querySelector("#cards")
+  .content.querySelector(".card__container");
 
 //Controls for edit modal opening
 // Event listener for edit button click
@@ -39,17 +42,6 @@ form.addEventListener("submit", updateNameAndTitle);
 function updateNameAndTitle() {
   profileName.textContent = formName.value;
   profileTitle.textContent = formTitle.value;
-}
-
-// Controls for active like button
-let likeButton = document.querySelector(".card__like-button");
-
-// Event listener for like button click
-likeButton.addEventListener("click", likeButtonClick);
-
-// Add class on button click
-function likeButtonClick() {
-  likeButton.classList.toggle("card__like-button_active");
 }
 
 // Add arrays for dynamic cards
@@ -95,3 +87,12 @@ postCloseButton.addEventListener("click", modalPostClose);
 function modalPostClose() {
   modalPost.classList.remove("modal-post_active");
 }
+
+//Code to add cards to the page
+let createCard = (data) => {
+  let cardElement = cardTemplate.cloneNode(true);
+  let cardTitle = cardElement.querySelector(".card__title");
+  let cardImage = cardElement.querySelector(".card__img");
+  let cardLike = cardElement.querySelector(".card__like-button");
+  let cardRemove = cardElement.querySelector(".card__delete-button");
+
