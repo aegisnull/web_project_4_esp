@@ -109,6 +109,7 @@ let createCard = (data) => {
 
   const renderCard = (data) => {
     list.prepend(createCard(data));
-}
+  };
+};
 
 initialCards.forEach(renderCard);
