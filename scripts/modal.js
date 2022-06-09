@@ -39,9 +39,16 @@ function modalClose() {
 form.addEventListener("submit", updateNameAndTitle);
 
 //Function to update the profile name and title
-function updateNameAndTitle() {
-  profileName.textContent = formName.value;
-  profileTitle.textContent = formTitle.value;
+function updateNameAndTitle(evt) {
+  evt.preventDefault();
+
+  const formNameValue = formName.value;
+  const formTitleValue = formTitle.value;
+
+  profileName.textContent = formNameValue;
+  profileTitle.textContent = formTitleValue;
+
+  modalClose();
 }
 
 // Add arrays for dynamic cards
