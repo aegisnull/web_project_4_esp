@@ -106,3 +106,9 @@ let createCard = (data) => {
   cardRemove.addEventListener("click", () => {
     cardImage.parentNode.remove();
   });
+
+  const renderCard = (data) => {
+    list.prepend(createCard(data));
+}
+
+initialCards.forEach(renderCard);
