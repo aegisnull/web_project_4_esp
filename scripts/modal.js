@@ -96,3 +96,11 @@ let createCard = (data) => {
   let cardLike = cardElement.querySelector(".card__like-button");
   let cardRemove = cardElement.querySelector(".card__delete-button");
 
+  cardTitle.textContent = data.name;
+  cardImage.style.backgroundImage = `url(${data.link})`;
+
+  cardLike.addEventListener("click", () => {
+    cardLike.classList.toggle("card__like-button_active");
+  });
+
+ 
