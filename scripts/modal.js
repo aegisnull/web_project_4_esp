@@ -10,11 +10,6 @@ let form = document.querySelector(".modal__form");
 let createPostButton = document.querySelector(".profile__post-button");
 let modalPost = document.querySelector(".modal-post");
 let postCloseButton = document.querySelector(".modal-post__close");
-let cardTitle = document.querySelector(".modal__profile-cardtitle");
-let cardURL = document.querySelector(".modal__profile-cardurl");
-let cardTemplate = document
-  .querySelector("#cards")
-  .content.querySelector(".card__container");
 
 //Controls for edit modal opening
 // Event listener for edit button click
@@ -49,8 +44,33 @@ function updateNameAndTitle(evt) {
   profileTitle.textContent = formTitleValue;
 
   modalClose();
+  console.log("form submited");
 }
 
+// Event listener for createPostButton button click
+createPostButton.addEventListener("click", modalPostOpen);
+
+// Function to open modal and in the process set the values of the form fields same as the profile fields
+function modalPostOpen() {
+  modalPost.classList.add("modal-post_active");
+}
+
+//Controls for edit modal closing
+// Event listener for close button click
+postCloseButton.addEventListener("click", modalPostClose);
+
+function modalPostClose() {
+  modalPost.classList.remove("modal-post_active");
+}
+
+// Code to use cards with the template and array
+// Select where to put the template cards
+const cards = document.querySelector(".cards");
+// Point to the template
+const cardTemplate = document.getElementById("cards").content;
+// Create a small fragment to put the cards in
+const fragment = document.createDocumentFragment();
+const cardContent = document.querySelector(".card-content");
 // Add arrays for dynamic cards
 const initialCards = [
   {
@@ -79,44 +99,39 @@ const initialCards = [
   },
 ];
 
-// Event listener for createPostButton button click
-createPostButton.addEventListener("click", modalPostOpen);
+// forEach loop to create cards from the array
+initialCards.forEach((el) => {
+  cardTemplate.querySelector(".card__img").setAttribute("src", el.link);
+  cardTemplate.querySelector(".card__img").setAttribute("alt", el.name);
+  cardTemplate.querySelector(".card__title").textContent = el.name;
 
-// Function to open modal and in the process set the values of the form fields same as the profile fields
-function modalPostOpen() {
-  modalPost.classList.add("modal-post_active");
+  let clone = document.importNode(cardTemplate, true);
+  fragment.append(clone);
+});
+
+cards.append(fragment);
+
+// Code to add new cards with the form sumbit
+// Event listener for form submit
+let newPostForm = document.querySelector(".modal-post");
+newPostForm.addEventListener("submit", addNewCard);
+
+// Declare functions to form fields
+let newPostName = document.querySelector(".modal__profile-cardtitle");
+let newPostLink = document.querySelector(".modal__profile-cardurl");
+
+function addNewCard(evt) {
+  evt.preventDefault();
+  cardTemplate
+    .querySelector(".card__img")
+    .setAttribute("src", newPostLink.value);
+  cardTemplate
+    .querySelector(".card__img")
+    .setAttribute("alt", newPostName.value);
+  cardTemplate.querySelector(".card__title").textContent = newPostName.value;
+
+  let clone = document.importNode(cardTemplate, true);
+  fragment.append(clone);
+  cards.prepend(fragment);
+  modalPostClose();
 }
-
-//Controls for edit modal closing
-// Event listener for close button click
-postCloseButton.addEventListener("click", modalPostClose);
-
-function modalPostClose() {
-  modalPost.classList.remove("modal-post_active");
-}
-
-//Code to add cards to the page
-let createCard = (data) => {
-  let cardElement = cardTemplate.cloneNode(true);
-  let cardTitle = cardElement.querySelector(".card__title");
-  let cardImage = cardElement.querySelector(".card__img");
-  let cardLike = cardElement.querySelector(".card__like-button");
-  let cardRemove = cardElement.querySelector(".card__delete-button");
-
-  cardTitle.textContent = data.name;
-  cardImage.style.backgroundImage = `url(${data.link})`;
-
-  cardLike.addEventListener("click", () => {
-    cardLike.classList.toggle("card__like-button_active");
-  });
-
-  cardRemove.addEventListener("click", () => {
-    cardImage.parentNode.remove();
-  });
-
-  const renderCard = (data) => {
-    list.prepend(createCard(data));
-  };
-};
-
-initialCards.forEach(renderCard);
