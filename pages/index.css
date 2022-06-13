@@ -44,3 +44,5 @@
 
 @import url(../blocks/modal-post/modal-post.css);
 @import url(../blocks/modal-post/__close/modal-post__close.css);
+
+@import url(../blocks/card/__remove-button/card__remove-button.css);
