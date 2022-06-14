@@ -153,3 +153,26 @@ likeButton.addEventListener("click", (e) => {
 function likeCard(evt) {
   evt.target.classList.toggle("card__like-button_active");
 }
+
+// Code for image modal
+
+const imageModal = document.querySelector(".modal__type-img");
+const modalImage = document.querySelector(".modal__img");
+const modalCaption = document.querySelector(".modal__img-caption");
+const imageClose = imageModal.querySelector(".modal-image__close");
+
+function openImageModal() {
+  imageModal.classList.toggle("display_image-modal");
+}
+
+function displayImage(data) {
+  modalImage.src = data.link;
+  modalImage.alt = data.name;
+  modalCaption.textContent = data.name;
+
+  openImageModal(imageModal);
+}
+
+imageClose.addEventListener("click", () => {
+  openImageModal(imageModal);
+});
