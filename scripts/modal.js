@@ -135,3 +135,19 @@ function addNewCard(evt) {
   cards.prepend(fragment);
   modalPostClose();
 }
+
+// Code to remove cards with the delete button
+// Remove button event listener on click
+let removeButton = document.querySelector(".card__remove-button");
+removeButton.addEventListener("click", removeCard);
+
+function removeCard(evt) {
+  evt.target.parentElement.remove();
+}
+
+const likeButton = document.querySelector(".card__like-button");
+likeButton.addEventListener("click", likeCard);
+
+function likeCard(evt) {
+  evt.target.classList.toggle("card__like-button_active");
+}
