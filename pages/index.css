@@ -47,6 +47,5 @@
 
 @import url(../blocks/card/__remove-button/card__remove-button.css);
 
-@import url(../blocks/modal-image/__close/modal-image__close.css);
-
 @import url(../blocks/lightbox/lightbox.css);
+@import url(../blocks/lightbox/__close/lightbox__close.css);

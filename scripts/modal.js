@@ -169,6 +169,14 @@ images.forEach((image) => {
       lightbox.removeChild(lightbox.firstChild);
     }
     lightbox.appendChild(img);
+
+    const figureTitle = document.createElement("p");
+    figureTitle.textContent = image.alt;
+    figureTitle.classList.add("lightbox__title");
+    lightbox.appendChild(figureTitle);
+
+    const lightboxClose = document.createElement("button");
+    lightboxClose.classList.add("lightbox__close");
   });
 });
 
