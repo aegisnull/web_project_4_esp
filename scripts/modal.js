@@ -1,15 +1,15 @@
 // Variable initialization
-let editButton = document.querySelector(".profile__edit-button");
-let modal = document.querySelector(".modal");
-let formName = document.querySelector(".modal__profile-name");
-let formTitle = document.querySelector(".modal__profile-title");
-let profileName = document.querySelector(".profile__name");
-let profileTitle = document.querySelector(".profile__title");
-let profileCloseButton = document.querySelector(".modal__close");
-let form = document.querySelector(".modal__form");
-let createPostButton = document.querySelector(".profile__post-button");
-let modalPost = document.querySelector(".modal-post");
-let postCloseButton = document.querySelector(".modal-post__close");
+const editButton = document.querySelector(".profile__edit-button");
+const modal = document.querySelector(".modal");
+const formName = document.querySelector(".modal__profile-name");
+const formTitle = document.querySelector(".modal__profile-title");
+const profileName = document.querySelector(".profile__name");
+const profileTitle = document.querySelector(".profile__title");
+const profileCloseButton = document.querySelector(".modal__close");
+const form = document.querySelector(".modal__form");
+const createPostButton = document.querySelector(".profile__post-button");
+const modalPost = document.querySelector(".modal-post");
+const postCloseButton = document.querySelector(".modal-post__close");
 
 //Controls for edit modal opening
 // Event listener for edit button click
