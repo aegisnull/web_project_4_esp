@@ -177,6 +177,7 @@ images.forEach((image) => {
 
     const lightboxClose = document.createElement("button");
     lightboxClose.classList.add("lightbox__close");
+    lightbox.appendChild(lightboxClose);
   });
 });
 
