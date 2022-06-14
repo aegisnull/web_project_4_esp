@@ -47,3 +47,4 @@
 
 @import url(../blocks/card/__remove-button/card__remove-button.css);
 @import url(../blocks/modal/__type-img/modal__type-img.css);
+@import url(../blocks/modal/__overlay/modal__overlay.css);
