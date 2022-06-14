@@ -51,3 +51,5 @@
 @import url(../blocks/modal-image/__close/modal-image__close.css);
 @import url(../blocks/modal/__img/modal__img.css);
 @import url(../blocks/modal/__img-caption/modal__img-caption.css);
+
+@import url(../blocks/lightbox/lightbox.css);

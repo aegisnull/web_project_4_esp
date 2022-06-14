@@ -154,4 +154,7 @@ function likeCard(evt) {
   evt.target.classList.toggle("card__like-button_active");
 }
 
-// Code for image modal
+// Code for image lightbox
+const lightbox = document.createElement("div");
+lightbox.id = "lightbox";
+document.body.appendChild(lightbox);
