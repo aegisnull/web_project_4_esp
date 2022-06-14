@@ -49,3 +49,4 @@
 
 @import url(../blocks/lightbox/lightbox.css);
 @import url(../blocks/lightbox/__close/lightbox__close.css);
+@import url(../blocks/lightbox/__title/lightbox__title.css);
