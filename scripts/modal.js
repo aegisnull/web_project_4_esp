@@ -178,10 +178,13 @@ images.forEach((image) => {
     const lightboxClose = document.createElement("button");
     lightboxClose.classList.add("lightbox__close");
     lightbox.appendChild(lightboxClose);
-  });
-});
 
-lightbox.addEventListener("click", (e) => {
-  if (e.target !== e.currentTarget) return;
-  lightbox.classList.remove("active");
+    const lightboxCloseButton = document.querySelector(".lightbox__close");
+
+    lightboxCloseButton.addEventListener("click", closeLightbox);
+
+    function closeLightbox() {
+      lightbox.classList.remove("active");
+    }
+  });
 });
