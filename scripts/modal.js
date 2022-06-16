@@ -145,13 +145,14 @@ function removeCard(evt) {
   evt.target.parentElement.remove();
 }
 
-const likeButton = document.querySelector(".card__like-button");
-likeButton.addEventListener("click", (e) => {
-  likeCard(e);
-});
-
-function likeCard(evt) {
-  evt.target.classList.toggle("card__like-button_active");
+const likeButton = document.querySelectorAll(".card__like-button");
+for (let i = 0; i < likeButton.length; i++) {
+  likeButton[i].addEventListener("click", (e) => {
+    likeCard(e);
+  });
+  function likeCard(evt) {
+    evt.target.classList.toggle("card__like-button_active");
+  }
 }
 
 // Code for image lightbox
