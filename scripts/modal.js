@@ -138,11 +138,14 @@ function addNewCard(evt) {
 
 // Code to remove cards with the delete button
 // Remove button event listener on click
-let removeButton = document.querySelector(".card__remove-button");
-removeButton.addEventListener("click", removeCard);
-
-function removeCard(evt) {
-  evt.target.parentElement.remove();
+let removeButton = document.querySelectorAll(".card__remove-button");
+for (let i = 0; i < removeButton.length; i++) {
+  removeButton[i].addEventListener("click", (e) => {
+    removeCard(e);
+  });
+  function removeCard(evt) {
+    evt.target.parentElement.remove();
+  }
 }
 
 const likeButton = document.querySelectorAll(".card__like-button");
