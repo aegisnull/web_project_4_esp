@@ -21,3 +21,11 @@
 }
 
 @import url(../__form-submit/_disabled/modal__form-submit_disabled.css);
+
+.modal__form-submit:disabled {
+  opacity: 0.2;
+  pointer-events: none;
+  color: black;
+  background-color: transparent;
+  border: 1px solid black;
+}

@@ -43,7 +43,7 @@ function checkInputs(inputs, button) {
   }
 }
 
-function disbaleButton(button) {
+function disbleButton(button) {
   button.disabled = true;
 }
 
@@ -57,5 +57,17 @@ function checkInputValidity(input, settings) {
     removeErrorStyling(input);
   } else {
     addErrorStyling(input);
+  }
+}
+
+// Function to add error style rules
+function addErrorStyling(input, settings) {
+  input.classList.add("modal__input_has-error");
+  const span = document.querySelector(`#${input.id}-error`);
+  span.classList.add("modal__error-text_visible");
+  if (input.value.length == 0) {
+    span.textContent = "Por favor, rellena este campo.";
+  } else if (input.value.length < input.minLength) {
+    span.textContent = input.validationMessage;
   }
 }
