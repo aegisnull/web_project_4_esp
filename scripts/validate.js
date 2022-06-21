@@ -71,3 +71,10 @@ function addErrorStyling(input, settings) {
     span.textContent = input.validationMessage;
   }
 }
+
+// Function to remove error style rules
+function removeErrorStyles(input, settings) {
+  input.classList.remove("modal__input_has-error");
+  const span = document.querySelector(`#${input.id}-error`);
+  span.classList.remove("modal__error-text_visible");
+}
