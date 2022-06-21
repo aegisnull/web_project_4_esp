@@ -43,6 +43,10 @@ function checkInputs(inputs, button) {
   }
 }
 
+function disbaleButton(button) {
+  button.disabled = true;
+}
+
 // Function to check input validity
 function checkInputValidity(input, settings) {
   if (input.validity.valid) {
