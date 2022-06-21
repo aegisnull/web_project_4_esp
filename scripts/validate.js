@@ -32,3 +32,13 @@ function setEventListeners(form, settings) {
     });
   });
 }
+
+// Function to enable and disable submit button
+function checkInputs(inputs, button) {
+  const inputArr = Array.from(inputs);
+  if (inputArr.every((input) => input.validity.valid)) {
+    enableButton(button);
+  } else {
+    disableButton(button);
+  }
+}
