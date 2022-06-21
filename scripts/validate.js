@@ -42,3 +42,12 @@ function checkInputs(inputs, button) {
     disableButton(button);
   }
 }
+
+// Function to check input validity
+function checkInputValidity(input, settings) {
+  if (input.validity.valid) {
+    removeErrorStyling(input);
+  } else {
+    addErrorStyling(input);
+  }
+}
