@@ -206,3 +206,17 @@ lightbox.addEventListener("click", (e) => {
     lightbox.classList.remove("active");
   }
 });
+
+// Close modal on click outside of the profile modal
+modal.addEventListener("click", (e) => {
+  if (e.target === modal) {
+    modalClose();
+  }
+});
+
+// Close modal on click outside of the new post modal
+modalPost.addEventListener("click", (e) => {
+  if (e.target === modalPost) {
+    modalPostClose();
+  }
+});
