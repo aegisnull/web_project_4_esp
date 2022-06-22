@@ -43,7 +43,7 @@ function checkInputs(inputs, button) {
   }
 }
 
-function disbleButton(button) {
+function disableButton(button) {
   button.disabled = true;
 }
 
