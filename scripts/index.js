@@ -44,7 +44,6 @@ function updateNameAndTitle(evt) {
   profileTitle.textContent = formTitleValue;
 
   modalClose();
-  console.log("form submited");
 }
 
 // Event listener for createPostButton button click
@@ -191,4 +190,12 @@ images.forEach((image) => {
       lightbox.classList.remove("active");
     }
   });
+});
+
+// Close modal on esc key press
+document.addEventListener("keydown", (e) => {
+  if (e.key === "Escape") {
+    modalPostClose();
+    modalClose();
+  }
 });
