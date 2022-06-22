@@ -4,7 +4,7 @@
 enableValidation({
   formSelector: ".modal__form",
   inputSelector: ".modal__input",
-  submitButtonSelector: ".modal__button",
+  submitButtonSelector: ".modal__form-submit",
   inactiveButtonClass: "modal__form-submit_disabled",
   inputErrorClass: "modal__input_type_error",
   errorClass: "modal__error_visible",
@@ -28,7 +28,7 @@ function setEventListeners(form, settings) {
       // Check validation
       checkInputValidity(input, settings);
       checkInputs(inputs, button);
-      changeErrorText(input, settings);
+      //    changeErrorText(input, settings);
     });
   });
 }
@@ -63,18 +63,18 @@ function checkInputValidity(input, settings) {
 // Function to add error style rules
 function addErrorStyling(input, settings) {
   input.classList.add("modal__input_has-error");
-  const span = document.querySelector(`#${input.id}-error`);
-  span.classList.add("modal__error-text_visible");
-  if (input.value.length == 0) {
-    span.textContent = "Por favor, rellena este campo.";
-  } else if (input.value.length < input.minLength) {
-    span.textContent = input.validationMessage;
-  }
+  //const span = document.querySelector(`#${input.id}-error`);
+  //span.classList.add("modal__error-text_visible");
+  //if (input.value.length == 0) {
+  //   span.textContent = "Por favor, rellena este campo.";
+  //} else if (input.value.length < input.minLength) {
+  //  span.textContent = input.validationMessage;
+  //}
 }
 
 // Function to remove error style rules
-function removeErrorStyles(input, settings) {
+function removeErrorStyling(input, settings) {
   input.classList.remove("modal__input_has-error");
-  const span = document.querySelector(`#${input.id}-error`);
-  span.classList.remove("modal__error-text_visible");
+  //const span = document.querySelector(`#${input.id}-error`);
+  // span.classList.remove("modal__error-text_visible");
 }
