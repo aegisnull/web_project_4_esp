@@ -53,3 +53,5 @@
 
 @import url(../blocks/modal/__close-button/modal__close-button.css);
 @import url(../blocks/modal/__input/_has-error/modal__input_has-error.css);
+
+@import url(../blocks/modal/__error/modal__error.css);

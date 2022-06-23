@@ -1,0 +1,15 @@
+.modal__error {
+  font-family: "Inter";
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 15px;
+  color: #ff0000;
+  visibility: hidden;
+  margin-bottom: 30px;
+  padding-bottom: 30px;
+}
+
+.modal__error_visible {
+  visibility: visible;
+  margin-bottom: 30px;
+}

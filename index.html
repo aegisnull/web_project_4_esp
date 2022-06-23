@@ -80,18 +80,26 @@
             <form class="modal__form" name="newPlace">
               <input
                 class="modal__input modal__profile-cardtitle"
+                id="new-place-title"
                 type="text"
                 value="Título"
                 minlength="2"
                 maxlength="30"
                 required
               />
+              <span class="modal__error" id="new-place-title-error">
+                Por favor, rellena este campo.</span
+              >
               <input
                 class="modal__input modal__profile-cardurl"
+                id="new-place-url"
                 type="url"
                 value="Enlace a la imágen"
                 required
               />
+              <span class="modal__error" id="new-place-url-error">
+                Por favor, rellena este campo.</span
+              >
               <button class="modal__form-submit modal__form-create">
                 Crear
               </button>

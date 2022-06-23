@@ -63,18 +63,18 @@ function checkInputValidity(input, settings) {
 // Function to add error style rules
 function addErrorStyling(input, settings) {
   input.classList.add("modal__input_has-error");
-  //const span = document.querySelector(`#${input.id}-error`);
-  //span.classList.add("modal__error-text_visible");
-  //if (input.value.length == 0) {
-  //   span.textContent = "Por favor, rellena este campo.";
-  //} else if (input.value.length < input.minLength) {
-  //  span.textContent = input.validationMessage;
-  //}
+  const span = document.querySelector(`#${input.id}-error`);
+  span.classList.add("modal__error_visible");
+  if (input.value.length == 0) {
+    span.textContent = input.validationMessage;
+  } else if (input.value.length < input.minLength) {
+    span.textContent = input.validationMessage;
+  }
 }
 
 // Function to remove error style rules
 function removeErrorStyling(input, settings) {
   input.classList.remove("modal__input_has-error");
-  //const span = document.querySelector(`#${input.id}-error`);
-  // span.classList.remove("modal__error-text_visible");
+  const span = document.querySelector(`#${input.id}-error`);
+  span.classList.remove("modal__error_visible");
 }
