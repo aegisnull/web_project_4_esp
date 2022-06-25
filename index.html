@@ -47,80 +47,77 @@
             />
           </button>
         </div>
-
-        <div class="modal">
-          <div class="modal__container">
-            <h2 class="modal__title">Edit profile</h2>
-            <form class="modal__form" name="editProfile">
-              <input
-                class="modal__input modal__profile-name"
-                id="edit-profile-name"
-                type="text"
-                placeholder="username"
-                minlength="2"
-                maxlength="40"
-                required
-              />
-              <span class="modal__error" id="edit-profile-name-error">
-                Por favor, rellena este campo.</span
-              >
-              <input
-                class="modal__input modal__profile-title"
-                id="edit-profile-title"
-                type="text"
-                placeholder="usertitle"
-                minlength="2"
-                maxlength="200"
-                required
-              />
-              <span class="modal__error" id="edit-profile-title-error">
-                Por favor, rellena este campo.</span
-              >
-              <button type="submit" class="modal__form-submit">Guardar</button>
-            </form>
-            <button class="modal__close-button modal__close"></button>
-          </div>
-        </div>
-
-        <div class="modal modal-post">
-          <div class="modal__container">
-            <h2 class="modal__title">Nuevo Lugar</h2>
-            <form class="modal__form" name="newPlace">
-              <input
-                class="modal__input modal__profile-cardtitle"
-                id="new-place-title"
-                type="text"
-                placeholder="Título"
-                minlength="2"
-                maxlength="30"
-                required
-              />
-              <span class="modal__error" id="new-place-title-error">
-                Por favor, rellena este campo.</span
-              >
-              <input
-                class="modal__input modal__profile-cardurl"
-                id="new-place-url"
-                type="url"
-                placeholder="Enlace a la imágen"
-                required
-              />
-              <span class="modal__error" id="new-place-url-error">
-                Por favor, rellena este campo.</span
-              >
-              <button class="modal__form-submit modal__form-create">
-                Crear
-              </button>
-            </form>
-            <button class="modal__close-button modal-post__close"></button>
-          </div>
-        </div>
       </section>
       <section class="cards"></section>
 
       <section class="footer">
         <h2 class="footer__copyright">© 2021 Alrededor de los EEUU</h2>
       </section>
+    </div>
+    <div class="modal">
+      <div class="modal__container">
+        <h2 class="modal__title">Edit profile</h2>
+        <form class="modal__form" name="editProfile">
+          <input
+            class="modal__input modal__profile-name"
+            id="edit-profile-name"
+            type="text"
+            placeholder="username"
+            minlength="2"
+            maxlength="40"
+            required
+          />
+          <span class="modal__error" id="edit-profile-name-error">
+            Por favor, rellena este campo.</span
+          >
+          <input
+            class="modal__input modal__profile-title"
+            id="edit-profile-title"
+            type="text"
+            placeholder="usertitle"
+            minlength="2"
+            maxlength="200"
+            required
+          />
+          <span class="modal__error" id="edit-profile-title-error">
+            Por favor, rellena este campo.</span
+          >
+          <button type="submit" class="modal__form-submit">Guardar</button>
+        </form>
+        <button class="modal__close-button modal__close"></button>
+      </div>
+    </div>
+
+    <div class="modal modal-post">
+      <div class="modal__container">
+        <h2 class="modal__title">Nuevo Lugar</h2>
+        <form class="modal__form" name="newPlace">
+          <input
+            class="modal__input modal__profile-cardtitle"
+            id="new-place-title"
+            type="text"
+            placeholder="Título"
+            minlength="2"
+            maxlength="30"
+            required
+          />
+          <span class="modal__error" id="new-place-title-error">
+            Por favor, rellena este campo.</span
+          >
+          <input
+            class="modal__input modal__profile-cardurl"
+            id="new-place-url"
+            type="url"
+            placeholder="Enlace a la imágen"
+            required
+          />
+          <span class="modal__error" id="new-place-url-error">
+            Por favor, rellena este campo.</span
+          >
+          <button class="modal__form-submit modal__form-create">Crear</button>
+        </form>
+        <button class="modal__close-button modal-post__close"></button>
+      </div>
     </div>
 
     <template id="cards">
