@@ -143,8 +143,13 @@ for (let i = 0; i < removeButton.length; i++) {
     removeCard(e);
   });
   function removeCard(evt) {
-    evt.target.parentElement.remove();
+    evt.target.closest(".card").remove();
   }
+}
+
+// function to delete closest card
+function removeCard(evt) {
+  evt.target.closest(".card__container").remove();
 }
 
 const likeButton = document.querySelectorAll(".card__like-button");
