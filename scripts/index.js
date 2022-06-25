@@ -18,8 +18,8 @@ editButton.addEventListener("click", modalOpen);
 // Function to open modal and in the process set the values of the form fields same as the profile fields
 function modalOpen() {
   modal.classList.add("modal_active");
-  formName.value = profileName.textContent;
-  formTitle.value = profileTitle.textContent;
+  formName.placeholder = profileName.textContent;
+  formTitle.placeholder = profileTitle.textContent;
 }
 
 //Controls for edit modal closing
