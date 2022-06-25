@@ -138,14 +138,10 @@ function addNewCard(evt) {
 // Code to remove cards with the delete button
 // Remove button event listener on click
 let removeButton = document.querySelectorAll(".card__remove-button");
-for (let i = 0; i < removeButton.length; i++) {
-  removeButton[i].addEventListener("click", (e) => {
-    removeCard(e);
-  });
-  function removeCard(evt) {
-    evt.target.closest(".card").remove();
-  }
-}
+// for each removebutton add event listener
+removeButton.forEach((el) => {
+  el.addEventListener("click", removeCard);
+});
 
 // function to delete closest card
 function removeCard(evt) {
