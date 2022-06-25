@@ -6,7 +6,7 @@
   margin-top: 18px;
   background: transparent;
   border: none;
-  background-image: url(../../../img/trash.svg);
+  background-image: url(../../../images/trash.svg);
 }
 
 .card__remove-button:hover {
