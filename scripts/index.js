@@ -148,14 +148,15 @@ function removeCard(evt) {
   evt.target.closest(".card__container").remove();
 }
 
+// forEach loop to add event listeners to like buttons
 const likeButton = document.querySelectorAll(".card__like-button");
-for (let i = 0; i < likeButton.length; i++) {
-  likeButton[i].addEventListener("click", (e) => {
-    likeCard(e);
-  });
-  function likeCard(evt) {
-    evt.target.classList.toggle("card__like-button_active");
-  }
+likeButton.forEach((el) => {
+  el.addEventListener("click", likeCard);
+});
+
+// function to add class to like button
+function likeCard(evt) {
+  evt.target.classList.toggle("card__like-button_active");
 }
 
 // Code for image lightbox
