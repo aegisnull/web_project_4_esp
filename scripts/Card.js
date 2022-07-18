@@ -34,17 +34,17 @@ class Card {
     this._element
       .querySelector(".card__like-button")
       .addEventListener("click", () => {
-        this.cardLike();
+        this._cardLike();
       });
 
     this._element
       .querySelector(".card__remove-button")
       .addEventListener("click", (evt) => {
-        this.cardRemove(evt);
+        this._cardRemove(evt);
       });
   }
 
-  cardLike() {
+  _cardLike() {
     this.isLiked = !this.isLiked;
 
     if (this.isLiked) {
@@ -58,7 +58,7 @@ class Card {
     }
   }
 
-  cardRemove(evt) {
+  _cardRemove(evt) {
     evt.target.parentElement.remove();
   }
 }
