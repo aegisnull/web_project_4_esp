@@ -1,4 +1,5 @@
 import { Card } from "./Card.js";
+import { FormValidator } from "./FormValidator.js";
 
 // Variable initialization
 const editButton = document.querySelector(".profile__edit-button");
