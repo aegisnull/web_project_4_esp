@@ -22,6 +22,7 @@ class Card {
 
     // Añadir datos
     this._element.querySelector(".card__img").src = this._image;
+    this._element.querySelector(".card__img").alt = this._title;
     this._element.querySelector(".card__title").textContent = this._title;
 
     // Devolver el elemento
