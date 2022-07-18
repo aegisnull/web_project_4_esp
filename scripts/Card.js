@@ -19,6 +19,7 @@ class Card {
   generateCard() {
     // Almacenar el marcado en el campo privado _element
     this._element = this._getTemplate();
+    this._setEventListeners();
 
     // Añadir datos
     this._element.querySelector(".card__img").src = this._image;
@@ -29,8 +30,36 @@ class Card {
     return this._element;
   }
 
+  _setEventListeners() {
+    this._element
+      .querySelector(".card__like-button")
+      .addEventListener("click", () => {
+        this.cardLike();
+      });
+
+    this._element
+      .querySelector(".card__remove-button")
+      .addEventListener("click", () => {
+        this.cardRemove();
+      });
+  }
+
   cardLike() {
     this.isLiked = !this.isLiked;
+
+    if (this.isLiked) {
+      this._element
+        .querySelector(".card__like-button")
+        .classList.add("card__like-button_active");
+    } else {
+      this._element
+        .querySelector(".card__like-button")
+        .classList.remove("card__like-button_active");
+    }
+  }
+
+  cardRemove(evt) {
+    evt.target.parentElement.remove();
   }
 }
 

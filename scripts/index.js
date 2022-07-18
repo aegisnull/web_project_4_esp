@@ -133,27 +133,16 @@ function addNewCard(evt) {
 
 // Code to remove cards with the delete button
 // Remove button event listener on click
-let removeButton = document.querySelectorAll(".card__remove-button");
+//let removeButton = document.querySelectorAll(".card__remove-button");
 // for each removebutton add event listener
-removeButton.forEach((el) => {
-  el.addEventListener("click", removeCard);
-});
+//removeButton.forEach((el) => {
+//  el.addEventListener("click", removeCard);
+//});
 
 // function to delete closest card
-function removeCard(evt) {
-  evt.target.closest(".card__container").remove();
-}
-
-// forEach loop to add event listeners to like buttons
-const likeButton = document.querySelectorAll(".card__like-button");
-likeButton.forEach((el) => {
-  el.addEventListener("click", likeCard);
-});
-
-// function to add class to like button
-function likeCard(evt) {
-  evt.target.classList.toggle("card__like-button_active");
-}
+//function removeCard(evt) {
+///  evt.target.closest(".card__container").remove();
+//}
 
 // Code for image lightbox
 const lightbox = document.createElement("div");
