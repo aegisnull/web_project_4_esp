@@ -2,6 +2,7 @@ class Card {
   constructor(cardTitle, cardImage) {
     this._title = cardTitle;
     this._image = cardImage;
+    this.isLiked = false;
   }
 
   _getTemplate() {
@@ -31,5 +32,3 @@ class Card {
     this.isLiked = !this.isLiked;
   }
 }
-
-export default Card;
