@@ -136,7 +136,7 @@ const initialCards = [
 initialCards.forEach((item) => {
   const card = new Card(item.name, item.link);
   const cardElement = card.generateCard();
-  document.body.append(cardElement);
+  document.querySelector(".cards").append(cardElement);
 });
 
 // Code to add new cards with the form sumbit
