@@ -39,8 +39,8 @@ class Card {
 
     this._element
       .querySelector(".card__remove-button")
-      .addEventListener("click", () => {
-        this.cardRemove();
+      .addEventListener("click", (evt) => {
+        this.cardRemove(evt);
       });
   }
 

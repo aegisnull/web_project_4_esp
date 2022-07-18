@@ -131,19 +131,6 @@ function addNewCard(evt) {
   modalPostClose();
 }
 
-// Code to remove cards with the delete button
-// Remove button event listener on click
-//let removeButton = document.querySelectorAll(".card__remove-button");
-// for each removebutton add event listener
-//removeButton.forEach((el) => {
-//  el.addEventListener("click", removeCard);
-//});
-
-// function to delete closest card
-//function removeCard(evt) {
-///  evt.target.closest(".card__container").remove();
-//}
-
 // Code for image lightbox
 const lightbox = document.createElement("div");
 lightbox.id = "lightbox";
