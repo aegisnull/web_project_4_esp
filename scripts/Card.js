@@ -15,6 +15,18 @@ class Card {
     return cardElement;
   }
 
+  generateCard() {
+    // Almacenar el marcado en el campo privado _element
+    this._element = this._getTemplate();
+
+    // Añadir datos
+    this._element.querySelector(".card__img").src = this._image;
+    this._element.querySelector(".card__title").textContent = this._text;
+
+    // Devolver el elemento
+    return this._element;
+  }
+
   cardLike() {
     this.isLiked = !this.isLiked;
   }
