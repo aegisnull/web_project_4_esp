@@ -31,3 +31,5 @@ class Card {
     this.isLiked = !this.isLiked;
   }
 }
+
+export default Card;

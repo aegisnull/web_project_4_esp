@@ -1,3 +1,5 @@
+import Card from "./Card.js";
+
 // Variable initialization
 const editButton = document.querySelector(".profile__edit-button");
 const modal = document.querySelector(".modal");
@@ -98,17 +100,19 @@ const initialCards = [
   },
 ];
 
+initialCards.forEach((item) => {
+
 // forEach loop to create cards from the array
-initialCards.forEach((el) => {
-  cardTemplate.querySelector(".card__img").setAttribute("src", el.link);
-  cardTemplate.querySelector(".card__img").setAttribute("alt", el.name);
-  cardTemplate.querySelector(".card__title").textContent = el.name;
+//initialCards.forEach((el) => {
+//  cardTemplate.querySelector(".card__img").setAttribute("src", el.link);
+//  cardTemplate.querySelector(".card__img").setAttribute("alt", el.name);
+//  cardTemplate.querySelector(".card__title").textContent = el.name;
 
-  let clone = document.importNode(cardTemplate, true);
-  fragment.append(clone);
-});
+//  let clone = document.importNode(cardTemplate, true);
+//  fragment.append(clone);
+//});
 
-cards.append(fragment);
+//cards.append(fragment);
 
 // Code to add new cards with the form sumbit
 // Event listener for form submit
