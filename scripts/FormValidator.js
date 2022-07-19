@@ -42,27 +42,17 @@ class FormValidator {
 
   _toggleSubmitButtonState() {}
 
-  _setEventListeners() {}
+  _setEventListeners() {
+    this.toggleButtonState();
+    this._inputList.forEach((inputElement) => {
+      inputElement.addEventListener("input", () => {
+        this._checkInputValidity(inputElement);
+        this.toggleButtonState();
+      });
+    });
+  }
 
   enableValidation() {}
 }
 
 export { FormValidator };
-
-/* --------------------------------- Verification --------------------------------- */
-const validationConfig = {
-  formSelector: ".popup__form",
-  inputSelector: ".popup__form-input",
-  submitButtonSelector: ".popup__button",
-  inactiveButtonClass: "popup__button_disabled",
-  inputErrorClass: "popup__input-type-error",
-  errorClass: "popup__error_visible",
-};
-
-const profileFormValidator = new FormValidator(
-  validationConfig,
-  submitProfileEdit
-);
-const placesFormValidator = new FormValidator(validationConfig, submitNewPlace);
-placesFormValidator.enableValidation();
-profileFormValidator.enableValidation();
