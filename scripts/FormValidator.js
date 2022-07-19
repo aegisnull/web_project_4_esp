@@ -26,7 +26,7 @@ class FormValidator {
     errorElement.textContent = "";
   }
 
-  _checkInputValidity() {
+  _checkInputValidity(inputElement) {
     if (!inputElement.validity.valid) {
       this._showErrorMessage(inputElement, inputElement.validationMessage);
     } else {
