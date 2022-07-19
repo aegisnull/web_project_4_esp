@@ -60,7 +60,12 @@ class FormValidator {
     });
   }
 
-  enableValidation() {}
+  enableValidation() {
+    this._form.addEventListener("submit", function (evt) {
+      evt.preventDefault();
+    });
+    this._setEventListeners();
+  }
 }
 
 export { FormValidator };
