@@ -10,7 +10,6 @@ const cards = document.querySelector(".cards");
 const cardTemplate = document.getElementById("cards").content;
 // Create a small fragment to put the cards in
 const fragment = document.createDocumentFragment();
-const cardContent = document.querySelector(".card-content");
 // Add arrays for dynamic cards
 const initialCards = [
   {

@@ -4,13 +4,15 @@ class FormValidator {
     this._formElement = formElement;
   }
 
-  _showErrorMessage(input) {}
+  _showErrorMessage() {}
 
-  _hideErrorMessage(input) {}
+  _hideErrorMessage() {}
 
-  _checkInputValidity(input) {}
+  _checkInputValidity() {}
 
-  _toggleSubmitButtonState(inputs, button) {}
+  _toggleSubmitButtonState() {}
+
+  _setEventListeners() {}
 
   enableValidation() {}
 }
