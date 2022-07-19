@@ -34,6 +34,12 @@ class FormValidator {
     }
   }
 
+  _failedInputValidityCheck() {
+    return this._inputList.some((inputElement) => {
+      return !inputElement.validity.valid;
+    });
+  }
+
   _toggleSubmitButtonState() {}
 
   _setEventListeners() {}
