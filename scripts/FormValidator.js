@@ -11,6 +11,15 @@ class FormValidator {
     this._buttonElement = this._form.querySelector(this._submitButtonSelector);
   }
 
+  enableValidation({
+    formSelector: ".modal__form",
+    inputSelector: ".modal__input",
+    submitButtonSelector: ".modal__form-submit",
+    inactiveButtonClass: "modal__form-submit_disabled",
+    inputErrorClass: "modal__input_type_error",
+    errorClass: "modal__error_visible",
+  });
+
   _setEventListeners(form, settings) {
     const inputs = form.querySelectorAll(settings.inputSelector);
     const button = form.querySelector(settings.submitButtonSelector);
@@ -22,7 +31,7 @@ class FormValidator {
     });
   }
 
-  enableValidation() {
+  enableValidation(settings) {
     this._form.addEventListener("submit", function (evt) {
       evt.preventDefault();
     });
