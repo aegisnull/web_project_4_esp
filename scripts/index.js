@@ -1,66 +1,7 @@
+import { Card } from "./Card.js";
+import { FormValidator } from "./FormValidator.js";
+
 // Variable initialization
-const editButton = document.querySelector(".profile__edit-button");
-const modal = document.querySelector(".modal");
-const formName = document.querySelector(".modal__profile-name");
-const formTitle = document.querySelector(".modal__profile-title");
-const profileName = document.querySelector(".profile__name");
-const profileTitle = document.querySelector(".profile__title");
-const profileCloseButton = document.querySelector(".modal__close");
-const form = document.querySelector(".modal__form");
-const createPostButton = document.querySelector(".profile__post-button");
-const modalPost = document.querySelector(".modal-post");
-const postCloseButton = document.querySelector(".modal-post__close");
-
-//Controls for edit modal opening
-// Event listener for edit button click
-editButton.addEventListener("click", modalOpen);
-
-// Function to open modal and in the process set the values of the form fields same as the profile fields
-function modalOpen() {
-  modal.classList.add("modal_active");
-  formName.placeholder = profileName.textContent;
-  formTitle.placeholder = profileTitle.textContent;
-}
-
-//Controls for edit modal closing
-// Event listener for close button click
-profileCloseButton.addEventListener("click", modalClose);
-
-function modalClose() {
-  modal.classList.remove("modal_active");
-}
-
-// Event listener for form submit
-form.addEventListener("submit", updateNameAndTitle);
-
-//Function to update the profile name and title
-function updateNameAndTitle(evt) {
-  evt.preventDefault();
-
-  const formNameValue = formName.value;
-  const formTitleValue = formTitle.value;
-
-  profileName.textContent = formNameValue;
-  profileTitle.textContent = formTitleValue;
-
-  modalClose();
-}
-
-// Event listener for createPostButton button click
-createPostButton.addEventListener("click", modalPostOpen);
-
-// Function to open modal and in the process set the values of the form fields same as the profile fields
-function modalPostOpen() {
-  modalPost.classList.add("modal-post_active");
-}
-
-//Controls for edit modal closing
-// Event listener for close button click
-postCloseButton.addEventListener("click", modalPostClose);
-
-function modalPostClose() {
-  modalPost.classList.remove("modal-post_active");
-}
 
 // Code to use cards with the template and array
 // Select where to put the template cards
@@ -69,7 +10,6 @@ const cards = document.querySelector(".cards");
 const cardTemplate = document.getElementById("cards").content;
 // Create a small fragment to put the cards in
 const fragment = document.createDocumentFragment();
-const cardContent = document.querySelector(".card-content");
 // Add arrays for dynamic cards
 const initialCards = [
   {
@@ -98,17 +38,11 @@ const initialCards = [
   },
 ];
 
-// forEach loop to create cards from the array
-initialCards.forEach((el) => {
-  cardTemplate.querySelector(".card__img").setAttribute("src", el.link);
-  cardTemplate.querySelector(".card__img").setAttribute("alt", el.name);
-  cardTemplate.querySelector(".card__title").textContent = el.name;
-
-  let clone = document.importNode(cardTemplate, true);
-  fragment.append(clone);
+initialCards.forEach((item) => {
+  const card = new Card(item.name, item.link);
+  const cardElement = card.generateCard();
+  document.querySelector(".cards").append(cardElement);
 });
-
-cards.append(fragment);
 
 // Code to add new cards with the form sumbit
 // Event listener for form submit
@@ -133,30 +67,6 @@ function addNewCard(evt) {
   fragment.append(clone);
   cards.prepend(fragment);
   modalPostClose();
-}
-
-// Code to remove cards with the delete button
-// Remove button event listener on click
-let removeButton = document.querySelectorAll(".card__remove-button");
-// for each removebutton add event listener
-removeButton.forEach((el) => {
-  el.addEventListener("click", removeCard);
-});
-
-// function to delete closest card
-function removeCard(evt) {
-  evt.target.closest(".card__container").remove();
-}
-
-// forEach loop to add event listeners to like buttons
-const likeButton = document.querySelectorAll(".card__like-button");
-likeButton.forEach((el) => {
-  el.addEventListener("click", likeCard);
-});
-
-// function to add class to like button
-function likeCard(evt) {
-  evt.target.classList.toggle("card__like-button_active");
 }
 
 // Code for image lightbox
@@ -194,31 +104,20 @@ images.forEach((image) => {
   });
 });
 
-// Close modal on esc key press
-document.addEventListener("keydown", (e) => {
-  if (e.key === "Escape") {
-    modalPostClose();
-    modalClose();
-  }
-});
+// validate form
+const formSelectors = {
+  inputSelector: ".modal__input",
+  submitButtonSelector: ".modal__form-submit",
+  inactiveButtonClass: "modal__form-submit_disabled",
+  inputErrorClass: "modal__input_type_error",
+  errorClass: "modal__error_visible",
+};
 
-// Close modal on click outside of the lightbox
-lightbox.addEventListener("click", (e) => {
-  if (e.target === lightbox) {
-    lightbox.classList.remove("active");
-  }
-});
+const editProfileForm = document.querySelector(".modal__form_profile");
+const newCardForm = document.querySelector(".modal__form_place");
 
-// Close modal on click outside of the profile modal
-modal.addEventListener("click", (e) => {
-  if (e.target === modal) {
-    modalClose();
-  }
-});
+const editProfileValidation = new FormValidator(formSelectors, editProfileForm);
+const newCardValidation = new FormValidator(formSelectors, newCardForm);
 
-// Close modal on click outside of the new post modal
-modalPost.addEventListener("click", (e) => {
-  if (e.target === modalPost) {
-    modalPostClose();
-  }
-});
+editProfileValidation.enableValidation();
+newCardValidation.enableValidation();

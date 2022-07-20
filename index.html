@@ -57,7 +57,7 @@
     <div class="modal">
       <div class="modal__container">
         <h2 class="modal__title">Edit profile</h2>
-        <form class="modal__form" name="editProfile">
+        <form class="modal__form modal__form_profile" name="editProfile">
           <input
             class="modal__input modal__profile-name"
             id="edit-profile-name"
@@ -82,7 +82,9 @@
           <span class="modal__error" id="edit-profile-title-error">
             Por favor, rellena este campo.</span
           >
-          <button type="submit" class="modal__form-submit">Guardar</button>
+          <button type="submit" class="modal__form-submit modal__profile-edit">
+            Guardar
+          </button>
         </form>
         <button class="modal__close-button modal__close"></button>
       </div>
@@ -91,7 +93,7 @@
     <div class="modal modal-post">
       <div class="modal__container">
         <h2 class="modal__title">Nuevo Lugar</h2>
-        <form class="modal__form" name="newPlace">
+        <form class="modal__form modal__form_place" name="newPlace">
           <input
             class="modal__input modal__profile-cardtitle"
             id="new-place-title"
@@ -131,7 +133,9 @@
       </div>
     </template>
 
-    <script src="./scripts/index.js"></script>
-    <script src="./scripts/validate.js"></script>
+    <script type="module" src="./scripts/index.js"></script>
+    <script type="module" src="./scripts/Card.js"></script>
+    <script type="module" src="./scripts/FormValidator.js"></script>
+    <script type="module" src="./scripts/utils.js"></script>
   </body>
 </html>
