@@ -104,12 +104,20 @@ images.forEach((image) => {
   });
 });
 
-// --------------------------------- validation ---------------------------------
+// validate form
 const formSelectors = {
-  formSelector: ".modal__form",
   inputSelector: ".modal__input",
   submitButtonSelector: ".modal__form-submit",
   inactiveButtonClass: "modal__form-submit_disabled",
   inputErrorClass: "modal__input_type_error",
   errorClass: "modal__error_visible",
 };
+
+const editProfileForm = document.querySelector(".modal__form_profile");
+const newCardForm = document.querySelector(".modal__form_place");
+
+const editProfileValidation = new FormValidator(formSelectors, editProfileForm);
+const newCardValidation = new FormValidator(formSelectors, newCardForm);
+
+editProfileValidation.enableValidation();
+newCardValidation.enableValidation();
