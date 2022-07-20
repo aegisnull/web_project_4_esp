@@ -105,7 +105,6 @@ images.forEach((image) => {
 });
 
 // --------------------------------- validation ---------------------------------
-
 const formSelectors = {
   formSelector: ".modal__form",
   inputSelector: ".modal__input",
