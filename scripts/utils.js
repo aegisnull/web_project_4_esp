@@ -49,6 +49,7 @@ document.addEventListener("keydown", (e) => {
 });
 
 // Close modal on click outside of the lightbox
+const lightbox = document.createElement("div");
 lightbox.addEventListener("click", (e) => {
   if (e.target === lightbox) {
     lightbox.classList.remove("active");

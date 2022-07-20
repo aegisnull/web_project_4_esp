@@ -7,18 +7,7 @@ class FormValidator {
     this._inactiveButtonClass = formSelectors.inactiveButtonClass;
     this._inputErrorClass = formSelectors.inputErrorClass;
     this._errorClass = formSelectors.errorClass;
-    this._inputList = [...this._form.querySelectorAll(this._inputSelector)];
-    this._buttonElement = this._form.querySelector(this._submitButtonSelector);
   }
-
-  enableValidation({
-    formSelector: ".modal__form",
-    inputSelector: ".modal__input",
-    submitButtonSelector: ".modal__form-submit",
-    inactiveButtonClass: "modal__form-submit_disabled",
-    inputErrorClass: "modal__input_type_error",
-    errorClass: "modal__error_visible",
-  });
 
   _setEventListeners(form, settings) {
     const inputs = form.querySelectorAll(settings.inputSelector);
