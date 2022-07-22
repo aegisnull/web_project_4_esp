@@ -1,4 +1,5 @@
 const path = require("path"); // conecta la ruta a la configuración de webpack
+const HtmlWebpackPlugin = require("html-webpack-plugin"); // plugin de conexión con html
 
 module.exports = {
   devtool: "inline-source-map",
@@ -33,4 +34,9 @@ module.exports = {
       },
     ],
   },
+  plugins: [
+    new HtmlWebpackPlugin({
+      template: "./src/index.html", // ruta a nuestro archivo index.html
+    }),
+  ],
 };
