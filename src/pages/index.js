@@ -1,4 +1,4 @@
-import "./styles/index.css"; // agrega la importación del archivo principal de hojas de estilo
+import "./index.css"; // agrega la importación del archivo principal de hojas de estilo
 import { Card } from "../components/Card.js";
 import { FormValidator } from "../components/FormValidator.js";
 
