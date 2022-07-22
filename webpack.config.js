@@ -1,6 +1,7 @@
 const path = require("path"); // conecta la ruta a la configuración de webpack
 const HtmlWebpackPlugin = require("html-webpack-plugin"); // plugin de conexión con html
 const { CleanWebpackPlugin } = require("clean-webpack-plugin"); // plugin de conexión
+const MiniCssExtractPlugin = require("mini-css-extract-plugin"); // plugin de conexión con css
 
 module.exports = {
   devtool: "inline-source-map",
@@ -33,6 +34,15 @@ module.exports = {
         // excluye la carpeta node_modules, no necesitamos procesar archivos en ella
         exclude: "/node_modules/",
       },
+      {
+        test: /\.css$/,
+        use: [
+          MiniCssExtractPlugin.loader,
+          {
+            loader: "css-loader",
+          },
+        ],
+      },
     ],
   },
   plugins: [
@@ -40,5 +50,6 @@ module.exports = {
       template: "./src/index.html", // ruta a nuestro archivo index.html
     }),
     new CleanWebpackPlugin(), // utiliza plugin
+    new MiniCssExtractPlugin(), // conecta el plugin para fusionar archivos CSS
   ],
 };
