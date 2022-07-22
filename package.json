@@ -1,6 +1,6 @@
 {
   "name": "web_project_4_esp",
-  "version": "1.0.0",
+  "version": "8.0.0",
   "description": "Around The U.S. Photo Sharing App",
   "main": "./pages/index.js",
   "scripts": {
