@@ -14,13 +14,13 @@ module.exports = {
     publicPath: "",
   },
   target: ["web", "es5"], // asegúrate de que el código glue de Webpack sea también compatible con ES5
+  stats: { children: true }, // muestra los errores de Webpack en consola
   mode: "development",
   devServer: {
-    contentBase: path.resolve(__dirname, "./dist"), // especifica una carpeta desde donde servir la aplicación y su contenido
+    static: path.resolve(__dirname, "./dist"), // especifica una carpeta desde donde servir la aplicación y su contenido
     compress: true, // esto acelerará la carga de archivos en el modo de desarrollo
     port: 8080, // abrirá tu página en localhost:8080 (puedes usar otro puerto)
     open: true, // se abrirá automáticamente en el navegador después de ejecutar npm run dev
-    stats: "errors-only", //solo sale cuando se producen errores
   },
   module: {
     rules: [
