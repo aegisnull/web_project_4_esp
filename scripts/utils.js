@@ -36,7 +36,7 @@ function modalPostOpen() {
 // Event listener for close button click
 postCloseButton.addEventListener("click", modalPostClose);
 
-function modalPostClose() {
+export function modalPostClose() {
   modalPost.classList.remove("modal-post_active");
 }
 
@@ -44,7 +44,7 @@ function modalPostClose() {
 document.addEventListener("keydown", (e) => {
   if (e.key === "Escape") {
     modalPostClose();
-    modalClose();
+    closeModal();
   }
 });
 
@@ -59,7 +59,7 @@ lightbox.addEventListener("click", (e) => {
 // Close modal on click outside of the profile modal
 modal.addEventListener("click", (e) => {
   if (e.target === modal) {
-    modalClose();
+    closeModal();
   }
 });
 
@@ -90,5 +90,5 @@ function updateNameAndTitle(evt) {
   profileName.textContent = formNameValue;
   profileTitle.textContent = formTitleValue;
 
-  modalClose();
+  closeModal();
 }
