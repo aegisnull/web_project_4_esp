@@ -1,8 +1,5 @@
 .modal__input {
-  border-bottom-color: rgba(0, 0, 0, 0.2);
-  border-left: none;
-  border-right: none;
-  border-top: none;
+  border: none, none, rgba(0, 0, 0, 0.2), none;
   color: #000;
   font-family: "Inter";
   font-size: 14px;
