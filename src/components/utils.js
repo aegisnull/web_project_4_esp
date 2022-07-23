@@ -7,10 +7,10 @@ const profileCloseButton = document.querySelector(".modal__close");
 
 //Controls for edit modal opening
 // Event listener for edit button click
-editButton.addEventListener("click", modalOpen);
+editButton.addEventListener("click", openModal);
 
 // Function to open modal and in the process set the values of the form fields same as the profile fields
-function modalOpen() {
+function openModal() {
   modal.classList.add("modal_active");
   formName.placeholder = profileName.textContent;
   formTitle.placeholder = profileTitle.textContent;
@@ -18,9 +18,9 @@ function modalOpen() {
 
 //Controls for edit modal closing
 // Event listener for close button click
-profileCloseButton.addEventListener("click", modalClose);
+profileCloseButton.addEventListener("click", closeModal);
 
-function modalClose() {
+function closeModal() {
   modal.classList.remove("modal_active");
 }
 

@@ -1,3 +1,13 @@
+@import url(./__close-button/modal__close-button.css);
+@import url(./__container/modal__container.css);
+@import url(./__error/modal__error.css);
+@import url(./__form-submit/modal__form-submit.css);
+@import url(./__form/modal__form.css);
+@import url(./__input/modal__input.css);
+@import url(./__profile-name/modal__profile-name.css);
+@import url(./__profile-title/modal__profile-title.css);
+@import url(./__title/modal__title.css);
+
 .modal {
   position: fixed;
   top: 0;

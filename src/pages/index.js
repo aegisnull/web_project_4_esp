@@ -47,12 +47,12 @@ initialCards.forEach((item) => {
 
 // Code to add new cards with the form sumbit
 // Event listener for form submit
-let newPostForm = document.querySelector(".modal-post");
+const newPostForm = document.querySelector(".modal-post");
 newPostForm.addEventListener("submit", addNewCard);
 
 // Declare functions to form fields
-let newPostName = document.querySelector(".modal__profile-cardtitle");
-let newPostLink = document.querySelector(".modal__profile-cardurl");
+const newPostName = document.querySelector(".modal__profile-cardtitle");
+const newPostLink = document.querySelector(".modal__profile-cardurl");
 
 function addNewCard(evt) {
   evt.preventDefault();
@@ -64,7 +64,7 @@ function addNewCard(evt) {
     .setAttribute("alt", newPostName.value);
   cardTemplate.querySelector(".card__title").textContent = newPostName.value;
 
-  let clone = document.importNode(cardTemplate, true);
+  const clone = document.importNode(cardTemplate, true);
   fragment.append(clone);
   cards.prepend(fragment);
   modalPostClose();
