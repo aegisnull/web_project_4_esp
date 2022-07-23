@@ -56,16 +56,9 @@ const newPostLink = document.querySelector(".modal__profile-cardurl");
 
 function addNewCard(evt) {
   evt.preventDefault();
-  cardTemplate
-    .querySelector(".card__img")
-    .setAttribute("src", newPostLink.value);
-  cardTemplate
-    .querySelector(".card__img")
-    .setAttribute("alt", newPostName.value);
-  cardTemplate.querySelector(".card__title").textContent = newPostName.value;
-
-  const clone = document.importNode(cardTemplate, true);
-  fragment.append(clone);
+  const newCard = new Card(newPostName.value, newPostLink.value);
+  const cardElement = newCard.generateCard();
+  fragment.append(cardElement);
   cards.prepend(fragment);
   modalPostClose();
 }
