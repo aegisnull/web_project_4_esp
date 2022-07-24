@@ -1,7 +1,7 @@
 import "./index.css"; // agrega la importación del archivo principal de hojas de estilo
-import { Card } from "./Card.js";
-import { FormValidator } from "./FormValidator.js";
-import { modalPostClose } from "./utils.js";
+import { Card } from "../components/Card.js";
+import { FormValidator } from "../components/FormValidator.js";
+import { modalPostClose } from "../components/utils.js";
 
 // Variable initialization
 
