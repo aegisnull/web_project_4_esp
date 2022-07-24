@@ -1,3 +1,6 @@
+@import url(./__close/lightbox__close.css);
+@import url(./__title/lightbox__title.css);
+
 #lightbox {
   position: fixed;
   z-index: 3;

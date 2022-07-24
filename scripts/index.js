@@ -1,13 +1,12 @@
 import { Card } from "./Card.js";
 import { FormValidator } from "./FormValidator.js";
+import { modalPostClose } from "./utils.js";
 
 // Variable initialization
 
 // Code to use cards with the template and array
 // Select where to put the template cards
 const cards = document.querySelector(".cards");
-// Point to the template
-const cardTemplate = document.getElementById("cards").content;
 // Create a small fragment to put the cards in
 const fragment = document.createDocumentFragment();
 // Add arrays for dynamic cards
@@ -39,32 +38,25 @@ const initialCards = [
 ];
 
 initialCards.forEach((item) => {
-  const card = new Card(item.name, item.link);
+  const card = new Card(item.name, item.link, "#cards");
   const cardElement = card.generateCard();
   document.querySelector(".cards").append(cardElement);
 });
 
 // Code to add new cards with the form sumbit
 // Event listener for form submit
-let newPostForm = document.querySelector(".modal-post");
+const newPostForm = document.querySelector(".modal-post");
 newPostForm.addEventListener("submit", addNewCard);
 
 // Declare functions to form fields
-let newPostName = document.querySelector(".modal__profile-cardtitle");
-let newPostLink = document.querySelector(".modal__profile-cardurl");
+const newPostName = document.querySelector(".modal__profile-cardtitle");
+const newPostLink = document.querySelector(".modal__profile-cardurl");
 
 function addNewCard(evt) {
   evt.preventDefault();
-  cardTemplate
-    .querySelector(".card__img")
-    .setAttribute("src", newPostLink.value);
-  cardTemplate
-    .querySelector(".card__img")
-    .setAttribute("alt", newPostName.value);
-  cardTemplate.querySelector(".card__title").textContent = newPostName.value;
-
-  let clone = document.importNode(cardTemplate, true);
-  fragment.append(clone);
+  const newCard = new Card(newPostName.value, newPostLink.value, "#cards");
+  const cardElement = newCard.generateCard();
+  fragment.append(cardElement);
   cards.prepend(fragment);
   modalPostClose();
 }
@@ -76,7 +68,7 @@ document.body.appendChild(lightbox);
 
 const images = document.querySelectorAll(".card__img");
 images.forEach((image) => {
-  image.addEventListener("click", (e) => {
+  image.addEventListener("click", () => {
     lightbox.classList.add("active");
     const img = document.createElement("img");
     img.src = image.src;
