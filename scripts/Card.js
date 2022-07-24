@@ -1,7 +1,8 @@
 class Card {
-  constructor(cardTitle, cardImage) {
+  constructor(cardTitle, cardImage, cardTemplateSelector) {
     this._title = cardTitle;
     this._image = cardImage;
+    this._cardTemplateSelector = cardTemplateSelector;
     this.isLiked = false;
   }
 
@@ -9,9 +10,9 @@ class Card {
     //  toma el marcado de HTML y copia el elemento
     // devuelve el elemento DOM de la tarjeta
     return document
-        .querySelector("#cards")
-        .content.querySelector(".card__container")
-        .cloneNode(true);
+      .querySelector(this._cardTemplateSelector)
+      .content.querySelector(".card__container")
+      .cloneNode(true);
   }
 
   generateCard() {

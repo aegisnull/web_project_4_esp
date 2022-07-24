@@ -38,7 +38,7 @@ const initialCards = [
 ];
 
 initialCards.forEach((item) => {
-  const card = new Card(item.name, item.link);
+  const card = new Card(item.name, item.link, "#cards");
   const cardElement = card.generateCard();
   document.querySelector(".cards").append(cardElement);
 });
@@ -54,7 +54,7 @@ const newPostLink = document.querySelector(".modal__profile-cardurl");
 
 function addNewCard(evt) {
   evt.preventDefault();
-  const newCard = new Card(newPostName.value, newPostLink.value);
+  const newCard = new Card(newPostName.value, newPostLink.value, "#cards");
   const cardElement = newCard.generateCard();
   fragment.append(cardElement);
   cards.prepend(fragment);
