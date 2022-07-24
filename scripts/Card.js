@@ -7,13 +7,11 @@ class Card {
 
   _getTemplate() {
     //  toma el marcado de HTML y copia el elemento
-    const cardElement = document
-      .querySelector("#cards")
-      .content.querySelector(".card__container")
-      .cloneNode(true);
-
     // devuelve el elemento DOM de la tarjeta
-    return cardElement;
+    return document
+        .querySelector("#cards")
+        .content.querySelector(".card__container")
+        .cloneNode(true);
   }
 
   generateCard() {

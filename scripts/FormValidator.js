@@ -2,7 +2,6 @@ class FormValidator {
   constructor(formSelectors, formElement) {
     this._inputSelector = formSelectors.inputSelector;
     this._submitButtonSelector = formSelectors.submitButtonSelector;
-    this._inactiveButtonClass = formSelectors.inactiveButtonClass;
     this._inputErrorClass = formSelectors.inputErrorClass;
     this._errorClass = formSelectors.errorClass;
     this._formElement = formElement;
@@ -34,11 +33,7 @@ class FormValidator {
   _toggleButtonState(inputs, button) {
     const isValid = inputs.every((input) => input.validity.valid);
 
-    if (isValid) {
-      button.disabled = false;
-    } else {
-      button.disabled = true;
-    }
+    button.disabled = !isValid;
   }
 
   _setEventListeners() {

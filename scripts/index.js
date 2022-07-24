@@ -7,8 +7,6 @@ import { modalPostClose } from "./utils.js";
 // Code to use cards with the template and array
 // Select where to put the template cards
 const cards = document.querySelector(".cards");
-// Point to the template
-const cardTemplate = document.getElementById("cards").content;
 // Create a small fragment to put the cards in
 const fragment = document.createDocumentFragment();
 // Add arrays for dynamic cards
@@ -70,7 +68,7 @@ document.body.appendChild(lightbox);
 
 const images = document.querySelectorAll(".card__img");
 images.forEach((image) => {
-  image.addEventListener("click", (e) => {
+  image.addEventListener("click", () => {
     lightbox.classList.add("active");
     const img = document.createElement("img");
     img.src = image.src;
