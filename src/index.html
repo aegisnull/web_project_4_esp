@@ -9,7 +9,11 @@
   <body class="main">
     <div class="main__container">
       <header class="header">
-        <img class="header__logo" src="./images/logo.svg" alt="Logo Around" />
+        <img
+          class="header__logo"
+          src="<%=require('./images/logo.svg')%>"
+          alt="Logo Around"
+        />
         <div class="header__line"></div>
       </header>
       <section class="profile">
@@ -26,7 +30,7 @@
             <button class="profile__edit-button">
               <img
                 class="profile__edit-icon"
-                src="./images/edit.svg"
+                src="<%=require('./images/edit.svg')%>"
                 alt="edit button"
               />
             </button>
@@ -39,7 +43,7 @@
           <button class="profile__post-button">
             <img
               class="profile__post-icon"
-              src="./images/post.svg"
+              src="<%=require('./images/post.svg')%>"
               alt="post button"
             />
           </button>

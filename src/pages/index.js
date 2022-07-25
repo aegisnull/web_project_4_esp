@@ -3,6 +3,15 @@ import { Card } from "../components/Card.js";
 import { FormValidator } from "../components/FormValidator.js";
 //import { modalPostClose } from "../components/utils.js";
 
+// import images
+import close from "../images/close.svg";
+import edit from "../images/edit.svg";
+import likefill from "../images/like-fill.svg";
+import like from "../images/like.svg";
+import logo from "../images/logo.svg";
+import post from "../images/post.svg";
+import trash from "../images/trash.svg";
+
 // Variable initialization
 
 // Code to use cards with the template and array
