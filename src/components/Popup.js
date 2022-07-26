@@ -18,4 +18,9 @@ class Popup {
       }
     });
   }
+
+  setEventListeners() {
+    const closePopupButton = this._popup.querySelector(".modal__close");
+    closePopupButton.addEventListener("click", this.close);
+  }
 }
