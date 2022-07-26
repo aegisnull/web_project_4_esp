@@ -41,12 +41,12 @@ export function modalPostClose() {
 }
 
 // Close modal on esc key press
-//document.addEventListener("keydown", (e) => {
-//  if (e.key === "Escape") {
-//    modalPostClose();
-//    closeModal();
-//  }
-//});
+document.addEventListener("keydown", (e) => {
+  if (e.key === "Escape") {
+    modalPostClose();
+    closeModal();
+  }
+});
 
 // Close modal on click outside of the lightbox
 const lightbox = document.createElement("div");

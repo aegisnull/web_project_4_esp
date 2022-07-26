@@ -140,7 +140,7 @@ editButton.addEventListener("click", openModal);
 
 // Function to open modal and in the process set the values of the form fields same as the profile fields
 function openModal() {
-  modal.classList.add("modal_active");
+  modal.classList.add("modal_active popup_visible");
   formName.placeholder = profileName.textContent;
   formTitle.placeholder = profileTitle.textContent;
 }
@@ -150,7 +150,7 @@ function openModal() {
 profileCloseButton.addEventListener("click", closeModal);
 
 function closeModal() {
-  modal.classList.remove("modal_active");
+  modal.classList.remove("modal_active popup_visible");
 }
 
 // Event listener for createPostButton button click
@@ -158,7 +158,7 @@ createPostButton.addEventListener("click", modalPostOpen);
 
 // Function to open modal and in the process set the values of the form fields same as the profile fields
 function modalPostOpen() {
-  modalPost.classList.add("modal-post_active");
+  modalPost.classList.add("modal-post_active popup_visible");
 }
 
 //Controls for edit modal closing
@@ -166,7 +166,7 @@ function modalPostOpen() {
 postCloseButton.addEventListener("click", modalPostClose);
 
 export function modalPostClose() {
-  modalPost.classList.remove("modal-post_active");
+  modalPost.classList.remove("modal-post_active popup_visible");
 }
 
 // Close modal on esc key press
