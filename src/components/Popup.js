@@ -10,4 +10,12 @@ class Popup {
   close() {
     this._popup.classList.remove("modal_active");
   }
+
+  _handleEscClose() {
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape") {
+        this.close();
+      }
+    });
+  }
 }
