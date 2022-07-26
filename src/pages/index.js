@@ -1,6 +1,7 @@
 import "./index.css"; // agrega la importación del archivo principal de hojas de estilo
 import { Card } from "../components/Card.js";
 import { FormValidator } from "../components/FormValidator.js";
+import { Popup } from "../components/Popup.js";
 //import { modalPostClose } from "../components/utils.js";
 
 // import images
@@ -74,6 +75,7 @@ function addNewCard(evt) {
 // Code for image lightbox
 const lightbox = document.createElement("div");
 lightbox.id = "lightbox";
+lightbox.classList.add("popup");
 document.body.appendChild(lightbox);
 
 const images = document.querySelectorAll(".card__img");

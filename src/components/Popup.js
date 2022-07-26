@@ -24,3 +24,5 @@ class Popup {
     closePopupButton.addEventListener("click", this.close);
   }
 }
+
+export { Popup };
