@@ -1,16 +1,14 @@
 class Popup {
   constructor(popup) {
-    this._popup = popup;
+    this._popup = document.querySelector(popup);
   }
 
   open() {
     this._popup.classList.add("modal_active");
-    this.setEventListeners();
   }
 
   close() {
     this._popup.classList.remove("modal_active");
-    this.removeEventListeners();
   }
 
   _handleEscClose() {
@@ -22,8 +20,8 @@ class Popup {
   }
 
   setEventListeners() {
-    const closePopupButton = this._popup.querySelector(".modal__close");
-    closePopupButton.addEventListener("click", this.close);
+    const closePopupButton = this._popup.querySelector(".modal__close-button");
+    this.closePopupButton.addEventListener("click", this.close);
   }
 
   removeEventListeners() {
