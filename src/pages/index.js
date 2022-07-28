@@ -140,3 +140,10 @@ const modalCloseButton = document.querySelector(".modal__close-button");
 modalCloseButton.addEventListener("click", () => {
   editProfilePopup.close();
 });
+
+const newCardPopup = new PopupWithForm("modal-post");
+
+const newCardButton = document.querySelector(".profile__post-button");
+newCardButton.addEventListener("click", () => {
+  newCardPopup.open();
+});
