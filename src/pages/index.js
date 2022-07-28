@@ -129,7 +129,7 @@ newCardValidation.enableValidation();
 
 // Replace with popup.js
 
-const editProfilePopup = new PopupWithForm("modal");
+const editProfilePopup = new PopupWithForm(".modal");
 
 const editProfileButton = document.querySelector(".profile__edit-button");
 editProfileButton.addEventListener("click", () => {
@@ -141,7 +141,7 @@ modalCloseButton.addEventListener("click", () => {
   editProfilePopup.close();
 });
 
-const newCardPopup = new PopupWithForm("modal-post");
+const newCardPopup = new PopupWithForm(".modal-post");
 
 const newCardButton = document.querySelector(".profile__post-button");
 newCardButton.addEventListener("click", () => {
