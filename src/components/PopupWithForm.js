@@ -14,4 +14,12 @@ class PopupWithForm extends Popup {
     });
     return this._inputValues;
   }
+
+  setEventListeners() {
+    super.setEventListeners();
+    this._popup.addEventListener("submit", (e) => {
+      e.preventDefault();
+      this._formSubmit(this._getInputValues());
+    });
+  }
 }
