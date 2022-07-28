@@ -130,3 +130,8 @@ newCardValidation.enableValidation();
 // Replace with popup.js
 
 const editProfilePopup = new PopupWithForm("modal");
+
+const editProfileButton = document.querySelector(".profile__edit-button");
+editProfileButton.addEventListener("click", () => {
+  editProfilePopup.open();
+});
