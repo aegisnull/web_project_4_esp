@@ -135,3 +135,8 @@ const editProfileButton = document.querySelector(".profile__edit-button");
 editProfileButton.addEventListener("click", () => {
   editProfilePopup.open();
 });
+
+const modalCloseButton = document.querySelector(".modal__close-button");
+modalCloseButton.addEventListener("click", () => {
+  editProfilePopup.close();
+});
