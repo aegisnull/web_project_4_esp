@@ -28,9 +28,9 @@ class Popup {
   }
 
   removeEventListeners() {
-    const closePopupButton = this._popup.querySelector(".modal__close-button");
-    closePopupButton.removeEventListener("click", this.close);
-  }
+    this._popup.querySelector(".modal__close-button").removeEventListener("click", () => {
+      this.close();
+  });
 }
 
 export { Popup };
