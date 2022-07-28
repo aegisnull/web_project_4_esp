@@ -135,6 +135,7 @@ const editProfileButton = document.querySelector(".profile__edit-button");
 editProfileButton.addEventListener("click", () => {
   editProfilePopup.open();
   editProfilePopup.setEventListeners();
+  editProfilePopup._handleEscClose();
 });
 
 //const modalCloseButton = document.querySelector(".modal__close-button");
@@ -148,4 +149,5 @@ const newCardButton = document.querySelector(".profile__post-button");
 newCardButton.addEventListener("click", () => {
   newCardPopup.open();
   newCardPopup.setEventListeners();
+  newCardPopup._handleEscClose();
 });
