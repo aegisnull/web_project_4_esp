@@ -20,12 +20,15 @@ class Popup {
   }
 
   setEventListeners() {
-    const closePopupButton = this._popup.querySelector(".modal__close-button");
-    this.closePopupButton.addEventListener("click", this.close);
+    this._popup
+      .querySelector(".modal__close-button")
+      .addEventListener("click", () => {
+        this.close();
+      });
   }
 
   removeEventListeners() {
-    const closePopupButton = this._popup.querySelector(".modal__close");
+    const closePopupButton = this._popup.querySelector(".modal__close-button");
     closePopupButton.removeEventListener("click", this.close);
   }
 }

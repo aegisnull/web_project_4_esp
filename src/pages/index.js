@@ -134,16 +134,18 @@ const editProfilePopup = new PopupWithForm(".modal");
 const editProfileButton = document.querySelector(".profile__edit-button");
 editProfileButton.addEventListener("click", () => {
   editProfilePopup.open();
+  editProfilePopup.setEventListeners();
 });
 
-const modalCloseButton = document.querySelector(".modal__close-button");
-modalCloseButton.addEventListener("click", () => {
-  editProfilePopup.close();
-});
+//const modalCloseButton = document.querySelector(".modal__close-button");
+//modalCloseButton.addEventListener("click", () => {
+//  editProfilePopup.close();
+//});
 
 const newCardPopup = new PopupWithForm(".modal-post");
 
 const newCardButton = document.querySelector(".profile__post-button");
 newCardButton.addEventListener("click", () => {
   newCardPopup.open();
+  newCardPopup.setEventListeners();
 });
