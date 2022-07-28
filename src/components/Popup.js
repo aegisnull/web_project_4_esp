@@ -26,14 +26,6 @@ class Popup {
         this.close();
       });
   }
-
-  removeEventListeners() {
-    this._popup
-      .querySelector(".modal__close-button")
-      .removeEventListener("click", () => {
-        this.close();
-      });
-  }
 }
 
 export { Popup };
