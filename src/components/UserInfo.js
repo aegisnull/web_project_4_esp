@@ -10,4 +10,9 @@ class UserInfo {
     profile.position = this._position.textContent;
     return profile;
   }
+
+  setUserInfo(name, position) {
+    this._user.textContent = name;
+    this._position.textContent = position;
+  }
 }
