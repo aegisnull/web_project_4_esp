@@ -126,7 +126,8 @@ const newCardValidation = new FormValidator(formSelectors, newCardForm);
 editProfileValidation.enableValidation();
 newCardValidation.enableValidation();
 
-// Replace with popup.js
+// User info
+const userInfo = new UserInfo(".profile__name", ".profile__title");
 
 const editProfilePopup = new PopupWithForm(".modal");
 
@@ -135,6 +136,7 @@ editProfileButton.addEventListener("click", () => {
   editProfilePopup.open();
   editProfilePopup.setEventListeners();
   editProfilePopup._handleEscClose();
+  userInfo.getUserInfo();
 });
 
 //const modalCloseButton = document.querySelector(".modal__close-button");

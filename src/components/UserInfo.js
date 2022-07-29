@@ -5,10 +5,11 @@ class UserInfo {
   }
 
   getUserInfo() {
-    const profile = {};
-    profile.name = this._user.textContent;
-    profile.position = this._position.textContent;
-    return profile;
+    const popupUserField = document.querySelector(".modal__profile-name");
+    const popupUserPosition = document.querySelector(".modal__profile-title");
+
+    popupUserField.placeholder = this._user.textContent;
+    popupUserPosition.placeholder = this._position.textContent;
   }
 
   setUserInfo(name, position) {
