@@ -1,6 +1,13 @@
 class UserInfo {
-  constructor(user) {
-    this._user = user.name;
-    this._position = user._position;
+  constructor(userName, userPosition) {
+    this._user = document.querySelector(userName);
+    this._position = document.querySelector(userPosition);
+  }
+
+  getUserInfo() {
+    const profile = {};
+    profile.name = this._user.textContent;
+    profile.position = this._position.textContent;
+    return profile;
   }
 }
