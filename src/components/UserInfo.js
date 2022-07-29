@@ -16,3 +16,5 @@ class UserInfo {
     this._position.textContent = position;
   }
 }
+
+export { UserInfo };

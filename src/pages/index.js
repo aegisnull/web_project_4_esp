@@ -2,6 +2,7 @@ import "./index.css"; // agrega la importación del archivo principal de hojas d
 import { Card } from "../components/Card.js";
 import { FormValidator } from "../components/FormValidator.js";
 import { PopupWithForm } from "../components/PopupWithForm.js";
+import { UserInfo } from "../components/UserInfo.js";
 
 // import images
 import close from "../images/close.svg";
