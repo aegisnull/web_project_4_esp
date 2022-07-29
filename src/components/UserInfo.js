@@ -12,9 +12,9 @@ class UserInfo {
     popupUserPosition.placeholder = this._position.textContent;
   }
 
-  setUserInfo(name, position) {
-    this._user.textContent = name;
-    this._position.textContent = position;
+  setUserInfo() {
+    this._user.textContent = popupUserField.value;
+    this._position.textContent = popupUserPosition.value;
   }
 }
 

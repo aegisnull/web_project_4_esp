@@ -129,7 +129,7 @@ newCardValidation.enableValidation();
 // User info
 const userInfo = new UserInfo(".profile__name", ".profile__title");
 
-const editProfilePopup = new PopupWithForm(".modal");
+const editProfilePopup = new PopupWithForm(".modal", ".modal__form_profile");
 
 const editProfileButton = document.querySelector(".profile__edit-button");
 editProfileButton.addEventListener("click", () => {
@@ -137,6 +137,11 @@ editProfileButton.addEventListener("click", () => {
   editProfilePopup.setEventListeners();
   editProfilePopup._handleEscClose();
   userInfo.getUserInfo();
+});
+
+const formProfile = document.querySelector(".modal__form_profile");
+formProfile.addEventListener("submit", () => {
+  userInfo.setUserInfo();
 });
 
 //const modalCloseButton = document.querySelector(".modal__close-button");
