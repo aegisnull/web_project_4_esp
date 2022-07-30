@@ -144,11 +144,6 @@ formProfile.addEventListener("submit", () => {
   userInfo.setUserInfo();
 });
 
-//const modalCloseButton = document.querySelector(".modal__close-button");
-//modalCloseButton.addEventListener("click", () => {
-//  editProfilePopup.close();
-//});
-
 const newCardPopup = new PopupWithForm(".modal-post", ".modal__form_place");
 
 const newCardButton = document.querySelector(".profile__post-button");
