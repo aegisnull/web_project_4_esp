@@ -74,32 +74,16 @@ function addNewCard(evt) {
 }
 
 const lightbox = new PopupWithImage("#lightbox");
-// Code for image lightbox
-//const lightbox = document.querySelector("#lightbox");
-//document.body.appendChild(lightbox);
 
 const images = document.querySelectorAll(".card__img");
 images.forEach((image) => {
   image.addEventListener("click", () => {
     lightbox.open(image);
-    // lightbox.classList.add("active");
-    // const img = document.querySelector(".lightbox__image");
-    // img.src = image.src;
-    // lightbox.appendChild(img);
-
-    //const figureTitle = document.querySelector(".lightbox__title");
-    // figureTitle.textContent = image.alt;
-    // lightbox.appendChild(figureTitle);
 
     const lightboxCloseButton = document.querySelector(".lightbox__close");
     lightboxCloseButton.addEventListener("click", () => {
       lightbox.close();
     });
-    //   lightboxCloseButton.addEventListener("click", closeLightbox);
-
-    //  function closeLightbox() {
-    //    lightbox.classList.remove("active");
-    //  }
   });
 });
 
