@@ -149,7 +149,7 @@ formProfile.addEventListener("submit", () => {
 //  editProfilePopup.close();
 //});
 
-const newCardPopup = new PopupWithForm(".modal-post");
+const newCardPopup = new PopupWithForm(".modal-post", ".modal__form_place");
 
 const newCardButton = document.querySelector(".profile__post-button");
 newCardButton.addEventListener("click", () => {
