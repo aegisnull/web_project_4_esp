@@ -4,6 +4,7 @@ import { FormValidator } from "../components/FormValidator.js";
 import { PopupWithForm } from "../components/PopupWithForm.js";
 import { UserInfo } from "../components/UserInfo.js";
 import { Section } from "../components/Section.js";
+import { PopupWithImage } from "../components/PopupWithImage.js";
 
 // import images
 import close from "../images/close.svg";
@@ -72,29 +73,33 @@ function addNewCard(evt) {
   cards.prepend(fragment);
 }
 
+const lightbox = new PopupWithImage("#lightbox");
 // Code for image lightbox
-const lightbox = document.querySelector("#lightbox");
-document.body.appendChild(lightbox);
+//const lightbox = document.querySelector("#lightbox");
+//document.body.appendChild(lightbox);
 
 const images = document.querySelectorAll(".card__img");
 images.forEach((image) => {
   image.addEventListener("click", () => {
-    lightbox.classList.add("active");
-    const img = document.querySelector(".lightbox__image");
-    img.src = image.src;
-    lightbox.appendChild(img);
+    lightbox.open(image);
+    // lightbox.classList.add("active");
+    // const img = document.querySelector(".lightbox__image");
+    // img.src = image.src;
+    // lightbox.appendChild(img);
 
-    const figureTitle = document.querySelector(".lightbox__title");
-    figureTitle.textContent = image.alt;
-    lightbox.appendChild(figureTitle);
+    //const figureTitle = document.querySelector(".lightbox__title");
+    // figureTitle.textContent = image.alt;
+    // lightbox.appendChild(figureTitle);
 
     const lightboxCloseButton = document.querySelector(".lightbox__close");
+    lightboxCloseButton.addEventListener("click", () => {
+      lightbox.close();
+    });
+    //   lightboxCloseButton.addEventListener("click", closeLightbox);
 
-    lightboxCloseButton.addEventListener("click", closeLightbox);
-
-    function closeLightbox() {
-      lightbox.classList.remove("active");
-    }
+    //  function closeLightbox() {
+    //    lightbox.classList.remove("active");
+    //  }
   });
 });
 
