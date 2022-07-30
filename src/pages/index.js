@@ -70,7 +70,6 @@ function addNewCard(evt) {
   const cardElement = newCard.generateCard();
   fragment.append(cardElement);
   cards.prepend(fragment);
-  modalPostClose();
 }
 
 // Code for image lightbox
