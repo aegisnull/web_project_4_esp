@@ -73,30 +73,20 @@ function addNewCard(evt) {
 }
 
 // Code for image lightbox
-const lightbox = document.createElement("div");
-lightbox.id = "lightbox";
-lightbox.classList.add("popup");
+const lightbox = document.querySelector("#lightbox");
 document.body.appendChild(lightbox);
 
 const images = document.querySelectorAll(".card__img");
 images.forEach((image) => {
   image.addEventListener("click", () => {
     lightbox.classList.add("active");
-    const img = document.createElement("img");
+    const img = document.querySelector(".lightbox__image");
     img.src = image.src;
-    while (lightbox.firstChild) {
-      lightbox.removeChild(lightbox.firstChild);
-    }
     lightbox.appendChild(img);
 
-    const figureTitle = document.createElement("p");
+    const figureTitle = document.querySelector(".lightbox__title");
     figureTitle.textContent = image.alt;
-    figureTitle.classList.add("lightbox__title");
     lightbox.appendChild(figureTitle);
-
-    const lightboxClose = document.createElement("button");
-    lightboxClose.classList.add("lightbox__close");
-    lightbox.appendChild(lightboxClose);
 
     const lightboxCloseButton = document.querySelector(".lightbox__close");
 
