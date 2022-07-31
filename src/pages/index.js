@@ -1,6 +1,19 @@
-import { Card } from "./Card.js";
-import { FormValidator } from "./FormValidator.js";
-import { modalPostClose } from "./utils.js";
+import "./index.css"; // agrega la importación del archivo principal de hojas de estilo
+import { Card } from "../components/Card.js";
+import { FormValidator } from "../components/FormValidator.js";
+import { PopupWithForm } from "../components/PopupWithForm.js";
+import { UserInfo } from "../components/UserInfo.js";
+import { Section } from "../components/Section.js";
+import { PopupWithImage } from "../components/PopupWithImage.js";
+
+// import images
+import close from "../images/close.svg";
+import edit from "../images/edit.svg";
+import likefill from "../images/like-fill.svg";
+import like from "../images/like.svg";
+import logo from "../images/logo.svg";
+import post from "../images/post.svg";
+import trash from "../images/trash.svg";
 
 // Variable initialization
 
@@ -37,11 +50,21 @@ const initialCards = [
   },
 ];
 
-initialCards.forEach((item) => {
-  const card = new Card(item.name, item.link, "#cards");
-  const cardElement = card.generateCard();
-  document.querySelector(".cards").append(cardElement);
-});
+const initialCardsRender = new Section(
+  initialCards,
+  initialCards.forEach((item) => {
+    const card = new Card(item.name, item.link, "#cards");
+    const cardElement = card.generateCard();
+    document.querySelector(".cards").append(cardElement);
+  }),
+  ".cards"
+);
+
+//initialCards.forEach((item) => {
+//  const card = new Card(item.name, item.link, "#cards");
+//  const cardElement = card.generateCard();
+//  document.querySelector(".cards").append(cardElement);
+//});
 
 // Code to add new cards with the form sumbit
 // Event listener for form submit
@@ -58,41 +81,19 @@ function addNewCard(evt) {
   const cardElement = newCard.generateCard();
   fragment.append(cardElement);
   cards.prepend(fragment);
-  modalPostClose();
 }
 
-// Code for image lightbox
-const lightbox = document.createElement("div");
-lightbox.id = "lightbox";
-document.body.appendChild(lightbox);
+const lightbox = new PopupWithImage("#lightbox");
 
 const images = document.querySelectorAll(".card__img");
 images.forEach((image) => {
   image.addEventListener("click", () => {
-    lightbox.classList.add("active");
-    const img = document.createElement("img");
-    img.src = image.src;
-    while (lightbox.firstChild) {
-      lightbox.removeChild(lightbox.firstChild);
-    }
-    lightbox.appendChild(img);
-
-    const figureTitle = document.createElement("p");
-    figureTitle.textContent = image.alt;
-    figureTitle.classList.add("lightbox__title");
-    lightbox.appendChild(figureTitle);
-
-    const lightboxClose = document.createElement("button");
-    lightboxClose.classList.add("lightbox__close");
-    lightbox.appendChild(lightboxClose);
+    lightbox.open(image);
 
     const lightboxCloseButton = document.querySelector(".lightbox__close");
-
-    lightboxCloseButton.addEventListener("click", closeLightbox);
-
-    function closeLightbox() {
-      lightbox.classList.remove("active");
-    }
+    lightboxCloseButton.addEventListener("click", () => {
+      lightbox.close();
+    });
   });
 });
 
@@ -113,3 +114,30 @@ const newCardValidation = new FormValidator(formSelectors, newCardForm);
 
 editProfileValidation.enableValidation();
 newCardValidation.enableValidation();
+
+// User info
+const userInfo = new UserInfo(".profile__name", ".profile__title");
+
+const editProfilePopup = new PopupWithForm(".modal", ".modal__form_profile");
+
+const editProfileButton = document.querySelector(".profile__edit-button");
+editProfileButton.addEventListener("click", () => {
+  editProfilePopup.open();
+  editProfilePopup.setEventListeners();
+  editProfilePopup._handleEscClose();
+  userInfo.getUserInfo();
+});
+
+const formProfile = document.querySelector(".modal__form_profile");
+formProfile.addEventListener("submit", () => {
+  userInfo.setUserInfo();
+});
+
+const newCardPopup = new PopupWithForm(".modal-post", ".modal__form_place");
+
+const newCardButton = document.querySelector(".profile__post-button");
+newCardButton.addEventListener("click", () => {
+  newCardPopup.open();
+  newCardPopup.setEventListeners();
+  newCardPopup._handleEscClose();
+});
