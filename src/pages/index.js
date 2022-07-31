@@ -90,7 +90,7 @@ images.forEach((image) => {
   image.addEventListener("click", () => {
     lightbox.open(image);
 
-    const lightboxCloseButton = document.querySelector(".lightbox__close");
+    const lightboxCloseButton = document.querySelector(".popup__close");
     lightboxCloseButton.addEventListener("click", () => {
       lightbox.close();
     });

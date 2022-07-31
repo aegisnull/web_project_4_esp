@@ -1,5 +1,5 @@
-@import url(./__close/lightbox__close.css);
-@import url(./__title/lightbox__title.css);
+@import url(./__close/popup__close.css);
+@import url(./__title/popup__title.css);
 
 #lightbox {
   position: fixed;

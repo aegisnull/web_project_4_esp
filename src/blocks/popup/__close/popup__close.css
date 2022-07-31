@@ -1,4 +1,4 @@
-.lightbox__close {
+.popup__close {
   position: absolute;
   height: 40px;
   width: 40px;
@@ -13,13 +13,13 @@
   z-index: 5;
 }
 
-.lightbox__close:hover {
+.popup__close:hover {
   cursor: pointer;
   opacity: 0.5;
 }
 
 @media screen and (max-width: 540px) {
-  .lightbox__close {
+  .popup__close {
     width: 26px;
     height: 26px;
     right: -1px;
