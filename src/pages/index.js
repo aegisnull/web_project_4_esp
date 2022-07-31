@@ -50,11 +50,21 @@ const initialCards = [
   },
 ];
 
-initialCards.forEach((item) => {
-  const card = new Card(item.name, item.link, "#cards");
-  const cardElement = card.generateCard();
-  document.querySelector(".cards").append(cardElement);
-});
+const initialCardsRender = new Section(
+  initialCards,
+  initialCards.forEach((item) => {
+    const card = new Card(item.name, item.link, "#cards");
+    const cardElement = card.generateCard();
+    document.querySelector(".cards").append(cardElement);
+  }),
+  ".cards"
+);
+
+//initialCards.forEach((item) => {
+//  const card = new Card(item.name, item.link, "#cards");
+//  const cardElement = card.generateCard();
+//  document.querySelector(".cards").append(cardElement);
+//});
 
 // Code to add new cards with the form sumbit
 // Event listener for form submit
