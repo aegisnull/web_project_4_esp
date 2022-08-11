@@ -38,8 +38,11 @@ class Card {
 
     this._element
       .querySelector(".card__remove-button")
-      .addEventListener("click", (evt) => {
-        this._cardRemove(evt);
+      .addEventListener("click", () => {
+        document
+          .querySelector(".modal-confirmation")
+          .classList.add("modal_active");
+        this._cardRemove();
       });
   }
 
@@ -57,9 +60,8 @@ class Card {
     }
   }
 
-  _cardRemove(evt) {
-    document.querySelector(".modal-confirmation").classList.add("modal_active");
-    evt.target.parentElement.remove();
+  _cardRemove() {
+    this._element.remove();
   }
 }
 
