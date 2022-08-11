@@ -58,6 +58,7 @@ class Card {
   }
 
   _cardRemove(evt) {
+    document.querySelector(".modal-confirmation").classList.add("modal_active");
     evt.target.parentElement.remove();
   }
 }

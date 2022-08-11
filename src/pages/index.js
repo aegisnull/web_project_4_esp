@@ -141,3 +141,8 @@ newCardButton.addEventListener("click", () => {
   newCardPopup.setEventListeners();
   newCardPopup._handleEscClose();
 });
+
+const deleteConfirmationPopup = new PopupWithForm(
+  ".modal-confirmation",
+  ".modal__form_delete"
+);
