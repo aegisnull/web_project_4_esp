@@ -1,9 +1,11 @@
 class Card {
-  constructor(cardTitle, cardImage, cardTemplateSelector) {
+  constructor(cardTitle, cardImage, cardTemplateSelector, popup, deleteButton) {
     this._title = cardTitle;
     this._image = cardImage;
     this._cardTemplateSelector = cardTemplateSelector;
     this.isLiked = false;
+    this._popup = document.querySelector(popup);
+    this._deleteButton = document.querySelector(deleteButton);
   }
 
   _getTemplate() {
@@ -39,10 +41,7 @@ class Card {
     this._element
       .querySelector(".card__remove-button")
       .addEventListener("click", () => {
-        document
-          .querySelector(".modal-confirmation")
-          .classList.add("modal_active");
-        this._cardRemove();
+        this.open();
       });
   }
 
@@ -62,6 +61,41 @@ class Card {
 
   _cardRemove() {
     this._element.remove();
+  }
+
+  open() {
+    this._popup.classList.add("modal_active");
+    this._closeEventListeners();
+  }
+
+  _closeEventListeners() {
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape") {
+        this.close();
+      }
+    });
+    this._popup.addEventListener("click", (e) => {
+      if (e.target === this._popup) {
+        this.close();
+      }
+    });
+    this._popup
+      .querySelector(".modal__delete-close")
+      .addEventListener("click", () => {
+        this.close();
+      });
+
+    this._popup
+      .querySelector(".modal__form_delete")
+      .addEventListener("submit", (e) => {
+        e.preventDefault();
+        this.close();
+        this._cardRemove();
+      });
+  }
+
+  close() {
+    this._popup.classList.remove("modal_active");
   }
 }
 

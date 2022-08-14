@@ -53,7 +53,14 @@ const initialCards = [
 const initialCardsRender = new Section(
   initialCards,
   initialCards.forEach((item) => {
-    const card = new Card(item.name, item.link, "#cards");
+    const card = new Card(
+      item.name,
+      item.link,
+      "#cards",
+      ".modal-confirmation",
+      ".modal__delete-close",
+      ".modal__form-delete"
+    );
     const cardElement = card.generateCard();
     document.querySelector(".cards").append(cardElement);
   }),
@@ -141,8 +148,3 @@ newCardButton.addEventListener("click", () => {
   newCardPopup.setEventListeners();
   newCardPopup._handleEscClose();
 });
-
-const deleteConfirmationPopup = new PopupWithForm(
-  ".modal-confirmation",
-  ".modal__form_delete"
-);
