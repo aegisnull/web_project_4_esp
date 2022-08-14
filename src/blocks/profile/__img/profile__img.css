@@ -3,3 +3,7 @@
   max-height: 127.5px;
   border-radius: 50%;
 }
+
+.profile__img:hover {
+  opacity: 0.4;
+}
