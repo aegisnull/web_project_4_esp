@@ -152,13 +152,12 @@ newCardButton.addEventListener("click", () => {
 
 const profileImageEdit = new PopupWithForm(
   ".modal-profile",
-  "modal__form_profile-edit"
+  ".modal__form_profile-edit"
 );
 
 const profileImageButton = document
   .querySelector(".profile__overlay")
   .addEventListener("click", () => {
-    console.log("click");
     profileImageEdit.open();
     profileImageEdit.setEventListeners();
     profileImageEdit._handleEscClose();
