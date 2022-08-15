@@ -68,12 +68,6 @@ const initialCardsRender = new Section(
   ".cards"
 );
 
-//initialCards.forEach((item) => {
-//  const card = new Card(item.name, item.link, "#cards");
-//  const cardElement = card.generateCard();
-//  document.querySelector(".cards").append(cardElement);
-//});
-
 // Code to add new cards with the form sumbit
 // Event listener for form submit
 const newPostForm = document.querySelector(".modal-post");
