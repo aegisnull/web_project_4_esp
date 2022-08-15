@@ -163,6 +163,7 @@ const profileImageButton = document
     profileImageEdit._handleEscClose();
   });
 
+// Logic to add form validator to edit profile image modal
 const editProfileImageForm = document.querySelector(
   ".modal__form_profile-edit"
 );
