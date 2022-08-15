@@ -172,3 +172,5 @@ const editProfileImageValidation = new FormValidator(
   editProfileImageForm
 );
 editProfileImageValidation.enableValidation();
+
+// Code to add new profile image with the form sumbit
