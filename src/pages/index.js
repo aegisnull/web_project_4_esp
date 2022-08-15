@@ -79,7 +79,14 @@ const newPostLink = document.querySelector(".modal__profile-cardurl");
 
 function addNewCard(evt) {
   evt.preventDefault();
-  const newCard = new Card(newPostName.value, newPostLink.value, "#cards");
+  const newCard = new Card(
+    newPostName.value,
+    newPostLink.value,
+    "#cards",
+    ".modal-confirmation",
+    ".modal__delete-close",
+    ".modal__form-delete"
+  );
   const cardElement = newCard.generateCard();
   fragment.append(cardElement);
   cards.prepend(fragment);
