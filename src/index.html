@@ -147,6 +147,29 @@
       </div>
     </div>
 
+    <!--Popup for profile image edit-->
+    <div class="modal modal-profile">
+      <div class="modal__container">
+        <h2 class="modal__title">Cambiar foto de perfil</h2>
+        <form class="modal__form modal__form_profile-edit" name="newProfileImg">
+          <input
+            class="modal__input modal__profile-url"
+            id="new-place-url"
+            type="url"
+            placeholder="Enlace a la imágen"
+            required
+          />
+          <span class="modal__error" id="new-place-url-error">
+            Por favor, rellena este campo.</span
+          >
+          <button class="modal__form-submit modal__form-profile">
+            Guardar
+          </button>
+        </form>
+        <button class="modal__close-button modal-profile__close"></button>
+      </div>
+    </div>
+
     <!--Template for cards-->
     <template id="cards">
       <div class="card__container">
