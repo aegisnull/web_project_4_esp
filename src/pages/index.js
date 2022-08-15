@@ -162,3 +162,12 @@ const profileImageButton = document
     profileImageEdit.setEventListeners();
     profileImageEdit._handleEscClose();
   });
+
+const editProfileImageForm = document.querySelector(
+  ".modal__form_profile-edit"
+);
+const editProfileImageValidation = new FormValidator(
+  formSelectors,
+  editProfileImageForm
+);
+editProfileImageValidation.enableValidation();
