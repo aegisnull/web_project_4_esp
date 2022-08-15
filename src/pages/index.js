@@ -148,3 +148,7 @@ newCardButton.addEventListener("click", () => {
   newCardPopup.setEventListeners();
   newCardPopup._handleEscClose();
 });
+
+document.querySelector(".profile__overlay").addEventListener("click", () => {
+  console.log("click");
+});
