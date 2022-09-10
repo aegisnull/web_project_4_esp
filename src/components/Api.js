@@ -10,7 +10,11 @@ class Api {
       method: "GET",
       headers: this._headers,
     })
-      .then((res) => res.json())
+      .then((res) => {
+        if (res.ok) {
+          return res.json();
+        }
+      })
       .then((data) => {
         username.textContent = data.name;
         userPosition.textContent = data.about;
@@ -31,7 +35,11 @@ class Api {
         about: userPosition.textContent,
       }),
     })
-      .then((res) => res.json())
+      .then((res) => {
+        if (res.ok) {
+          return res.json();
+        }
+      })
       .then((data) => {
         username.textContent = data.name;
         userPosition.textContent = data.about;
@@ -50,7 +58,11 @@ class Api {
         avatar: userAvatar.src,
       }),
     })
-      .then((res) => res.json())
+      .then((res) => {
+        if (res.ok) {
+          return res.json();
+        }
+      })
       .then((data) => {
         userAvatar.src = data.avatar;
       })
