@@ -40,6 +40,24 @@ class Api {
         console.log("Error. La solicitud ha fallado");
       });
   }
+
+  //PATCH https://around.nomoreparties.co/v1/groupId/users/me/avatar
+  setUserAvatar() {
+    return fetch(`${this._baseUrl}/users/me/avatar`, {
+      method: "PATCH",
+      headers: this._headers,
+      body: JSON.stringify({
+        avatar: userAvatar.src,
+      }),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        userAvatar.src = data.avatar;
+      })
+      .catch((err) => {
+        console.log("Error. La solicitud ha fallado");
+      });
+  }
 }
 
 // Variables
