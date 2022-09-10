@@ -140,6 +140,7 @@ editProfileButton.addEventListener("click", () => {
 const formProfile = document.querySelector(".modal__form_profile");
 formProfile.addEventListener("submit", () => {
   userInfo.setUserInfo();
+  api.setUserInfo();
 });
 
 const newCardPopup = new PopupWithForm(".modal-post", ".modal__form_place");
