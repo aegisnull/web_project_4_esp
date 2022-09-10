@@ -162,6 +162,7 @@ const profileImageEditSubmit = document.querySelector(
 );
 profileImageEditSubmit.addEventListener("submit", () => {
   userInfo.setUserAvatar();
+  api.setUserAvatar();
 });
 
 const profileImageButton = document
