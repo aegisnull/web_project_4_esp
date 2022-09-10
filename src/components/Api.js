@@ -6,12 +6,6 @@ class Api {
 
   //GET https://around.nomoreparties.co/v1/groupId/users/me
   getUserInfo() {
-    // Variables
-    const username = document.querySelector(".profile__name");
-    const userPosition = document.querySelector(".profile__title");
-    const userAvatar = document.querySelector(".profile__img");
-
-    // FETCH request
     return fetch(`${this._baseUrl}/users/me`, {
       method: "GET",
       headers: this._headers,
@@ -29,11 +23,6 @@ class Api {
 
   //PATCH https://around.nomoreparties.co/v1/groupId/users/me
   setUserInfo(name, about) {
-    // Variables
-    const username = document.querySelector(".profile__name");
-    const userPosition = document.querySelector(".profile__title");
-
-    // FETCH request
     return fetch(`${this._baseUrl}/users/me`, {
       method: "PATCH",
       headers: this._headers,
@@ -52,4 +41,10 @@ class Api {
       });
   }
 }
+
+// Variables
+const username = document.querySelector(".profile__name");
+const userPosition = document.querySelector(".profile__title");
+const userAvatar = document.querySelector(".profile__img");
+
 export { Api };
