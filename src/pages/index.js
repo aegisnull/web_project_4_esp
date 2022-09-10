@@ -157,6 +157,13 @@ const profileImageEdit = new PopupWithForm(
   ".modal__form_profile-edit"
 );
 
+const profileImageEditSubmit = document.querySelector(
+  ".modal__form_profile-edit"
+);
+profileImageEditSubmit.addEventListener("submit", () => {
+  userInfo.setUserAvatar();
+});
+
 const profileImageButton = document
   .querySelector(".profile__overlay")
   .addEventListener("click", () => {
