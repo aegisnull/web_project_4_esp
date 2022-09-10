@@ -22,7 +22,7 @@ class Api {
   }
 
   //PATCH https://around.nomoreparties.co/v1/groupId/users/me
-  setUserInfo(name, about) {
+  setUserInfo() {
     return fetch(`${this._baseUrl}/users/me`, {
       method: "PATCH",
       headers: this._headers,
