@@ -20,7 +20,7 @@ class Api {
       .then((data) => {
         username.textContent = data.name;
         userPosition.textContent = data.about;
-        //userAvatar.src = data.avatar;
+        userAvatar.src = data.avatar;
       })
       .catch((err) => {
         console.log("Error. La solicitud ha fallado");
