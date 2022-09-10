@@ -9,6 +9,7 @@ class Api {
     // Variables
     const username = document.querySelector(".profile__name");
     const userPosition = document.querySelector(".profile__title");
+    const userAvatar = document.querySelector(".profile__img");
 
     // FETCH request
     return fetch(`${this._baseUrl}/users/me`, {
@@ -19,6 +20,7 @@ class Api {
       .then((data) => {
         username.textContent = data.name;
         userPosition.textContent = data.about;
+        //userAvatar.src = data.avatar;
       })
       .catch((err) => {
         console.log("Error. La solicitud ha fallado");
