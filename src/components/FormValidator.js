@@ -53,6 +53,10 @@ class FormValidator {
   enableValidation() {
     this._formElement.addEventListener("submit", (evt) => {
       evt.preventDefault();
+      const formSubmitButton = this._formElement.querySelector(
+        ".modal__form-submit"
+      );
+      formSubmitButton.textContent = "Guardando...";
     });
 
     this._setEventListeners();
