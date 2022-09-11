@@ -27,6 +27,10 @@ class PopupWithForm extends Popup {
   close() {
     super.close();
     this._formSelector.reset();
+    const formSubmitButton = this._formSelector.querySelector(
+      ".modal__form-submit"
+    );
+    formSubmitButton.textContent = "Guardar";
   }
 }
 
