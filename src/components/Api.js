@@ -70,6 +70,9 @@ class Api {
         console.log("Error. La solicitud ha fallado");
       });
   }
+
+  //GET https://around.nomoreparties.co/v1/groupId/cards
+  getInitialCards() {}
 }
 
 // Variables
