@@ -72,7 +72,23 @@ class Api {
   }
 
   //GET https://around.nomoreparties.co/v1/groupId/cards
-  getInitialCards() {}
+  getInitialCards() {
+    return fetch(`${this._baseUrl}/cards`, {
+      method: "GET",
+      headers: this._headers,
+    })
+      .then((res) => {
+        if (res.ok) {
+          return res.json();
+        }
+      })
+      .then((data) => {
+        return data;
+      })
+      .catch((err) => {
+        console.log("Error. La solicitud ha fallado");
+      });
+  }
 }
 
 // Variables
