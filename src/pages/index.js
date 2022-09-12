@@ -195,3 +195,4 @@ const api = new Api({
 });
 
 api.getUserInfo();
+api.getInitialCards();
