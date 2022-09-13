@@ -89,6 +89,29 @@ class Api {
         console.log("Error. La solicitud ha fallado");
       });
   }
+
+  //POST https://around.nomoreparties.co/v1/groupId/cards
+  addNewCard() {
+    return fetch(`${this._baseUrl}/cards`, {
+      method: "POST",
+      headers: this._headers,
+      body: JSON.stringify({
+        name: cardTitle.value,
+        link: cardImage.value,
+      }),
+    })
+      .then((res) => {
+        if (res.ok) {
+          return res.json();
+        }
+      })
+      .then((data) => {
+        return data;
+      })
+      .catch((err) => {
+        console.log("Error. La solicitud ha fallado");
+      });
+  }
 }
 
 // Variables
