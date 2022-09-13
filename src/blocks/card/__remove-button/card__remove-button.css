@@ -7,9 +7,14 @@
   background: transparent;
   border: none;
   background-image: url(../../../images/trash.svg);
+  visibility: hidden;
 }
 
 .card__remove-button:hover {
   cursor: pointer;
   opacity: 0.5;
+}
+
+.card__remove-button_active {
+  visibility: visible;
 }

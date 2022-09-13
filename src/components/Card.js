@@ -1,11 +1,20 @@
 class Card {
-  constructor(cardTitle, cardImage, cardTemplateSelector, popup, deleteButton) {
+  constructor(
+    cardTitle,
+    cardImage,
+    cardID,
+    cardTemplateSelector,
+    popup,
+    deleteButton
+  ) {
     this._title = cardTitle;
     this._image = cardImage;
+    this._cardID = cardID;
     this._cardTemplateSelector = cardTemplateSelector;
     this.isLiked = false;
     this._popup = document.querySelector(popup);
     this._deleteButton = document.querySelector(deleteButton);
+    this._myID = "93e8790e5bc88c3a9323d3fb";
   }
 
   _getTemplate() {
@@ -28,6 +37,12 @@ class Card {
     this._element.querySelector(".card__title").textContent = this._title;
 
     // Devolver el elemento
+    if (this._myID === this._cardID) {
+      this._element
+        .querySelector(".card__remove-button")
+        .classList.add("card__remove-button_active");
+    }
+
     return this._element;
   }
 
@@ -37,7 +52,6 @@ class Card {
       .addEventListener("click", () => {
         this._cardLike();
       });
-
     this._element
       .querySelector(".card__remove-button")
       .addEventListener("click", () => {
@@ -98,5 +112,7 @@ class Card {
     this._popup.classList.remove("modal_active");
   }
 }
+
+//const currentUser = "93e8790e5bc88c3a9323d3fb";
 
 export { Card };
