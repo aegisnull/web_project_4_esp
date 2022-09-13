@@ -63,19 +63,38 @@ const newPostLink = document.querySelector(".modal__profile-cardurl");
 
 function addNewCard(evt) {
   evt.preventDefault();
-  const newCard = new Card(
-    newPostName.value,
-    newPostLink.value,
-    "#cards",
-    ".modal-confirmation",
-    ".modal__delete-close",
-    ".modal__form-delete"
-  );
-  const cardElement = newCard.generateCard();
-  fragment.append(cardElement);
-  cards.prepend(fragment);
-  evt.target.reset();
+  const cardData = {
+    name: newPostName.value,
+    link: newPostLink.value,
+  };
+  api.addNewCard(cardData.name, cardData.link).then((data) => {
+    const card = new Card(
+      data.name,
+      data.link,
+      "#cards",
+      ".modal-confirmation",
+      ".modal__delete-close",
+      ".modal__form-delete"
+    );
+    const cardElement = card.generateCard();
+    document.querySelector(".cards").prepend(cardElement);
+  });
+  newPostForm.reset();
 }
+
+// const newCard = new Card(
+//   newPostName.value,
+//    newPostLink.value,
+//   "#cards",
+//   ".modal-confirmation",
+//   ".modal__delete-close",
+//   ".modal__form-delete"
+// );
+//const cardElement = newCard.generateCard();
+//  fragment.append(cardElement);
+//  cards.prepend(fragment);
+//  evt.target.reset();
+//}
 
 const lightbox = new PopupWithImage("#lightbox");
 
