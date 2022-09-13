@@ -1,5 +1,3 @@
-//import { Api } from "./Api";
-
 class Card {
   constructor(
     cardTitle,
@@ -78,7 +76,6 @@ class Card {
   }
 
   _cardRemove() {
-    api.deleteCard();
     this._element.remove();
   }
 
@@ -117,7 +114,5 @@ class Card {
     this._popup.classList.remove("modal_active");
   }
 }
-
-//const currentUser = "93e8790e5bc88c3a9323d3fb";
 
 export { Card };
