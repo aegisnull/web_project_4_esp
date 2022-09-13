@@ -1,7 +1,10 @@
+//import { Api } from "./Api";
+
 class Card {
   constructor(
     cardTitle,
     cardImage,
+    ownerID,
     cardID,
     cardTemplateSelector,
     popup,
@@ -9,6 +12,7 @@ class Card {
   ) {
     this._title = cardTitle;
     this._image = cardImage;
+    this._ownerID = ownerID;
     this._cardID = cardID;
     this._cardTemplateSelector = cardTemplateSelector;
     this.isLiked = false;
@@ -37,7 +41,7 @@ class Card {
     this._element.querySelector(".card__title").textContent = this._title;
 
     // Devolver el elemento
-    if (this._myID === this._cardID) {
+    if (this._myID === this._ownerID) {
       this._element
         .querySelector(".card__remove-button")
         .classList.add("card__remove-button_active");
@@ -74,6 +78,7 @@ class Card {
   }
 
   _cardRemove() {
+    api.deleteCard();
     this._element.remove();
   }
 

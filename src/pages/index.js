@@ -43,6 +43,7 @@ api.getInitialCards().then((data) => {
       item.name,
       item.link,
       item.owner._id,
+      item._id,
       "#cards",
       ".modal-confirmation",
       ".modal__delete-close",
@@ -50,6 +51,7 @@ api.getInitialCards().then((data) => {
     );
     const cardElement = card.generateCard();
     document.querySelector(".cards").append(cardElement);
+    console.log(item);
   });
 });
 
@@ -83,20 +85,6 @@ function addNewCard(evt) {
   });
   newPostForm.reset();
 }
-
-// const newCard = new Card(
-//   newPostName.value,
-//    newPostLink.value,
-//   "#cards",
-//   ".modal-confirmation",
-//   ".modal__delete-close",
-//   ".modal__form-delete"
-// );
-//const cardElement = newCard.generateCard();
-//  fragment.append(cardElement);
-//  cards.prepend(fragment);
-//  evt.target.reset();
-//}
 
 const lightbox = new PopupWithImage("#lightbox");
 
