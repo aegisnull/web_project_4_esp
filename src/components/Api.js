@@ -83,8 +83,7 @@ class Api {
         }
       })
       .then((data) => {
-        //    return data;
-        console.log(data);
+        return data;
       })
       .catch((err) => {
         console.log("Error. La solicitud ha fallado");

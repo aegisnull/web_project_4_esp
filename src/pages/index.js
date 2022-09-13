@@ -15,6 +15,7 @@ import like from "../images/like.svg";
 import logo from "../images/logo.svg";
 import post from "../images/post.svg";
 import trash from "../images/trash.svg";
+import { data } from "autoprefixer";
 
 // Variable initialization
 
@@ -195,4 +196,19 @@ const api = new Api({
 });
 
 api.getUserInfo();
-api.getInitialCards();
+
+// Code to add new cards from API
+api.getInitialCards().then((data) => {
+  data.forEach((item) => {
+    const card = new Card(
+      item.name,
+      item.link,
+      "#cards",
+      ".modal-confirmation",
+      ".modal__delete-close",
+      ".modal__form-delete"
+    );
+    const cardElement = card.generateCard();
+    document.querySelector(".cards").append(cardElement);
+  });
+});
