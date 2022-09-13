@@ -25,6 +25,33 @@ const cards = document.querySelector(".cards");
 // Create a small fragment to put the cards in
 const fragment = document.createDocumentFragment();
 
+// Code to add api
+const api = new Api({
+  baseUrl: "https://around.nomoreparties.co/v1/cohort-1-es",
+  headers: {
+    authorization: "e7cf5ec1-f874-45f0-bd41-d890ac5955db",
+    "Content-Type": "application/json",
+  },
+});
+
+api.getUserInfo();
+
+// Code to add new cards from API
+api.getInitialCards().then((data) => {
+  data.forEach((item) => {
+    const card = new Card(
+      item.name,
+      item.link,
+      "#cards",
+      ".modal-confirmation",
+      ".modal__delete-close",
+      ".modal__form-delete"
+    );
+    const cardElement = card.generateCard();
+    document.querySelector(".cards").append(cardElement);
+  });
+});
+
 // Code to add new cards with the form sumbit
 // Event listener for form submit
 const newPostForm = document.querySelector(".modal-post");
@@ -47,6 +74,7 @@ function addNewCard(evt) {
   const cardElement = newCard.generateCard();
   fragment.append(cardElement);
   cards.prepend(fragment);
+  evt.target.reset();
 }
 
 const lightbox = new PopupWithImage("#lightbox");
@@ -139,32 +167,3 @@ const editProfileImageValidation = new FormValidator(
   editProfileImageForm
 );
 editProfileImageValidation.enableValidation();
-
-// Code to add new profile image with the form sumbit
-
-// Code to add api
-const api = new Api({
-  baseUrl: "https://around.nomoreparties.co/v1/cohort-1-es",
-  headers: {
-    authorization: "e7cf5ec1-f874-45f0-bd41-d890ac5955db",
-    "Content-Type": "application/json",
-  },
-});
-
-api.getUserInfo();
-
-// Code to add new cards from API
-api.getInitialCards().then((data) => {
-  data.forEach((item) => {
-    const card = new Card(
-      item.name,
-      item.link,
-      "#cards",
-      ".modal-confirmation",
-      ".modal__delete-close",
-      ".modal__form-delete"
-    );
-    const cardElement = card.generateCard();
-    document.querySelector(".cards").append(cardElement);
-  });
-});

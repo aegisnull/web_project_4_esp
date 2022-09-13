@@ -91,13 +91,13 @@ class Api {
   }
 
   //POST https://around.nomoreparties.co/v1/groupId/cards
-  addNewCard() {
+  addNewCard(name, link) {
     return fetch(`${this._baseUrl}/cards`, {
       method: "POST",
       headers: this._headers,
       body: JSON.stringify({
-        name: cardTitle.value,
-        link: cardImage.value,
+        name,
+        link,
       }),
     })
       .then((res) => {

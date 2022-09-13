@@ -30,7 +30,6 @@ class PopupWithForm extends Popup {
       ".modal__form-submit"
     );
     formSubmitButton.textContent = "Guardar";
-    // this._formSelector.reset();
   }
 }
 
