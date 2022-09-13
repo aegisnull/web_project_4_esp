@@ -112,6 +112,25 @@ class Api {
         console.log("Error. La solicitud ha fallado");
       });
   }
+
+  //DELETE https://around.nomoreparties.co/v1/groupId/cards/cardId
+  deleteCard(cardId) {
+    return fetch(`${this._baseUrl}/cards/${cardId}`, {
+      method: "DELETE",
+      headers: this._headers,
+    })
+      .then((res) => {
+        if (res.ok) {
+          return res.json();
+        }
+      })
+      .then((data) => {
+        return data;
+      })
+      .catch((err) => {
+        console.log("Error. La solicitud ha fallado");
+      });
+  }
 }
 
 // Variables
