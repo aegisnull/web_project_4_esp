@@ -24,50 +24,6 @@ import { data } from "autoprefixer";
 const cards = document.querySelector(".cards");
 // Create a small fragment to put the cards in
 const fragment = document.createDocumentFragment();
-// Add arrays for dynamic cards
-const initialCards = [
-  {
-    name: "Valle de Yosemite",
-    link: "https://code.s3.yandex.net/web-code/yosemite.jpg",
-  },
-  {
-    name: "Lago Louise",
-    link: "https://code.s3.yandex.net/web-code/lake-louise.jpg",
-  },
-  {
-    name: "Montañas Calvas",
-    link: "https://code.s3.yandex.net/web-code/bald-mountains.jpg",
-  },
-  {
-    name: "Latemar",
-    link: "https://code.s3.yandex.net/web-code/latemar.jpg",
-  },
-  {
-    name: "Parque Nacional de la Vanoise",
-    link: "https://code.s3.yandex.net/web-code/vanoise.jpg",
-  },
-  {
-    name: "Lago di Braies",
-    link: "https://code.s3.yandex.net/web-code/lago.jpg",
-  },
-];
-
-const initialCardsRender = new Section(
-  initialCards,
-  initialCards.forEach((item) => {
-    const card = new Card(
-      item.name,
-      item.link,
-      "#cards",
-      ".modal-confirmation",
-      ".modal__delete-close",
-      ".modal__form-delete"
-    );
-    const cardElement = card.generateCard();
-    document.querySelector(".cards").append(cardElement);
-  }),
-  ".cards"
-);
 
 // Code to add new cards with the form sumbit
 // Event listener for form submit
