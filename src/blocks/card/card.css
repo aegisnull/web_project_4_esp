@@ -5,3 +5,5 @@
 @import url(./__remove-button/card__remove-button.css);
 @import url(./__text-container/card__text-container.css);
 @import url(./__title/card__title.css);
+@import url(./__like-container/card__like-container.css);
+@import url(./__like-counter/card__like-counter.css);
