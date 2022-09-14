@@ -22,6 +22,7 @@ class Card {
   ) {
     this._title = cardTitle;
     this._image = cardImage;
+    this._likes = cardLikes;
     this._ownerID = ownerID;
     this._cardID = cardID;
     this._cardTemplateSelector = cardTemplateSelector;
@@ -49,6 +50,8 @@ class Card {
     this._element.querySelector(".card__img").src = this._image;
     this._element.querySelector(".card__img").alt = this._title;
     this._element.querySelector(".card__title").textContent = this._title;
+    this._element.querySelector(".card__like-counter").textContent =
+      this._likes.length;
 
     // Devolver el elemento
     if (this._myID === this._ownerID) {
@@ -80,7 +83,7 @@ class Card {
       this._element
         .querySelector(".card__like-button")
         .classList.add("card__like-button_active");
-      api.addLike(this._cardID);
+      // api.addLike(this._cardID);
     } else {
       this._element
         .querySelector(".card__like-button")
