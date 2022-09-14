@@ -83,11 +83,12 @@ class Card {
       this._element
         .querySelector(".card__like-button")
         .classList.add("card__like-button_active");
-      // api.addLike(this._cardID);
+      api.addLike(this._cardID);
     } else {
       this._element
         .querySelector(".card__like-button")
         .classList.remove("card__like-button_active");
+      api.removeLike(this._cardID);
     }
   }
 
