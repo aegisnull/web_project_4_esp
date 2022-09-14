@@ -51,7 +51,6 @@ api.getInitialCards().then((data) => {
     );
     const cardElement = card.generateCard();
     document.querySelector(".cards").append(cardElement);
-    console.log(item);
   });
 });
 

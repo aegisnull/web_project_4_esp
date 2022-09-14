@@ -1,3 +1,14 @@
+import { Api } from "./Api.js";
+
+// Code to add api
+const api = new Api({
+  baseUrl: "https://around.nomoreparties.co/v1/cohort-1-es",
+  headers: {
+    authorization: "e7cf5ec1-f874-45f0-bd41-d890ac5955db",
+    "Content-Type": "application/json",
+  },
+});
+
 class Card {
   constructor(
     cardTitle,
@@ -76,6 +87,7 @@ class Card {
   }
 
   _cardRemove() {
+    api.deleteCard(this._cardID);
     this._element.remove();
   }
 
