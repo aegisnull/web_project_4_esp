@@ -153,6 +153,28 @@ class Api {
         console.log("Error. La solicitud ha fallado");
       });
   }
+
+  //DELETE https://around.nomoreparties.co/v1/groupId/cards/likes/cardId
+  removeLike(cardId) {
+    return fetch(`${this._baseUrl}/cards/likes/${cardId}`, {
+      method: "DELETE",
+      headers: this._headers,
+    })
+      .then((res) => {
+        if (res.ok) {
+          return res.json();
+        }
+      })
+      .then((data) => {
+        return data;
+      })
+      .finally((like) => {
+        likeCounter.textContent = like.length;
+      })
+      .catch((err) => {
+        console.log("Error. La solicitud ha fallado");
+      });
+  }
 }
 
 // Variables
