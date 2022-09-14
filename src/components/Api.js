@@ -146,9 +146,6 @@ class Api {
       .then((data) => {
         return data;
       })
-      .finally((like) => {
-        likeCounter.textContent = like.length;
-      })
       .catch((err) => {
         console.log("Error. La solicitud ha fallado");
       });
@@ -167,9 +164,6 @@ class Api {
       })
       .then((data) => {
         return data;
-      })
-      .finally((like) => {
-        likeCounter.textContent = like.length;
       })
       .catch((err) => {
         console.log("Error. La solicitud ha fallado");

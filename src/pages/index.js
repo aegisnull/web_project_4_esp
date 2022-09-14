@@ -53,6 +53,21 @@ api.getInitialCards().then((data) => {
     const cardElement = card.generateCard();
     document.querySelector(".cards").append(cardElement);
   });
+  // Add lightbox to the cards
+  const lightbox = new PopupWithImage("#lightbox");
+
+  const images = document.querySelectorAll(".card__img");
+  images.forEach((image) => {
+    image.addEventListener("click", () => {
+      lightbox.open(image);
+
+      const lightboxCloseButton = document.querySelector(".popup__close");
+      lightboxCloseButton.addEventListener("click", () => {
+        lightbox.close();
+      });
+    });
+  });
+  // End of lightbox code
 });
 
 // Code to add new cards with the form sumbit
@@ -84,23 +99,24 @@ function addNewCard(evt) {
     );
     const cardElement = card.generateCard();
     document.querySelector(".cards").prepend(cardElement);
-  });
-  newPostForm.reset();
-}
+    document.querySelector(".modal__form_place").reset();
+    // Add lightbox to the cards
+    const lightbox = new PopupWithImage("#lightbox");
 
-const lightbox = new PopupWithImage("#lightbox");
+    const images = document.querySelectorAll(".card__img");
+    images.forEach((image) => {
+      image.addEventListener("click", () => {
+        lightbox.open(image);
 
-const images = document.querySelectorAll(".card__img");
-images.forEach((image) => {
-  image.addEventListener("click", () => {
-    lightbox.open(image);
-
-    const lightboxCloseButton = document.querySelector(".popup__close");
-    lightboxCloseButton.addEventListener("click", () => {
-      lightbox.close();
+        const lightboxCloseButton = document.querySelector(".popup__close");
+        lightboxCloseButton.addEventListener("click", () => {
+          lightbox.close();
+        });
+      });
     });
+    // End of lightbox code
   });
-});
+}
 
 // validate form
 const formSelectors = {
