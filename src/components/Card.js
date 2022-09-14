@@ -13,6 +13,7 @@ class Card {
   constructor(
     cardTitle,
     cardImage,
+    cardLikes,
     ownerID,
     cardID,
     cardTemplateSelector,
@@ -79,6 +80,7 @@ class Card {
       this._element
         .querySelector(".card__like-button")
         .classList.add("card__like-button_active");
+      api.addLike(this._cardID);
     } else {
       this._element
         .querySelector(".card__like-button")

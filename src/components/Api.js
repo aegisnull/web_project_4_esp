@@ -146,6 +146,9 @@ class Api {
       .then((data) => {
         return data;
       })
+      .finally((like) => {
+        likeCounter.textContent = like.length;
+      })
       .catch((err) => {
         console.log("Error. La solicitud ha fallado");
       });
@@ -156,5 +159,6 @@ class Api {
 const username = document.querySelector(".profile__name");
 const userPosition = document.querySelector(".profile__title");
 const userAvatar = document.querySelector(".profile__img");
+const likeCounter = document.querySelectorAll(".card__like-counter");
 
 export { Api };

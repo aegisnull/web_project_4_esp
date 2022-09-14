@@ -42,6 +42,7 @@ api.getInitialCards().then((data) => {
     const card = new Card(
       item.name,
       item.link,
+      item.likes,
       item.owner._id,
       item._id,
       "#cards",
@@ -73,7 +74,9 @@ function addNewCard(evt) {
     const card = new Card(
       data.name,
       data.link,
+      data.likes,
       data.owner._id,
+      data._id,
       "#cards",
       ".modal-confirmation",
       ".modal__delete-close",
